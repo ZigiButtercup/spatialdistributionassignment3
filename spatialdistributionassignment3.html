@@ -1,0 +1,1726 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.5.57">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>spatialdistributionassignment3</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+</style>
+
+
+<script src="spatialdistributionassignment3_files/libs/clipboard/clipboard.min.js"></script>
+<script src="spatialdistributionassignment3_files/libs/quarto-html/quarto.js"></script>
+<script src="spatialdistributionassignment3_files/libs/quarto-html/popper.min.js"></script>
+<script src="spatialdistributionassignment3_files/libs/quarto-html/tippy.umd.min.js"></script>
+<script src="spatialdistributionassignment3_files/libs/quarto-html/anchor.min.js"></script>
+<link href="spatialdistributionassignment3_files/libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="spatialdistributionassignment3_files/libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="spatialdistributionassignment3_files/libs/bootstrap/bootstrap.min.js"></script>
+<link href="spatialdistributionassignment3_files/libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="spatialdistributionassignment3_files/libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+
+
+</head>
+
+<body class="fullcontent">
+
+<div id="quarto-content" class="page-columns page-rows-contents page-layout-article">
+
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">spatialdistributionassignment3</h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<div class="cell">
+<style type="text/css">
+
+body .main-container {
+  max-width: 900px;
+  margin: auto;
+  line-height: 1.6;
+  font-size: 1.1rem;
+  color: #333;
+  font-family: Georgia, serif;
+}
+</style>
+</div>
+<section id="the-great-re-range-ment-changing-distributions-of-panthera-leo-lion-and-equus-quagga-plains-zebra-across-africa-under-present-and-future-climate-conditions" class="level2">
+<h2 class="anchored" data-anchor-id="the-great-re-range-ment-changing-distributions-of-panthera-leo-lion-and-equus-quagga-plains-zebra-across-africa-under-present-and-future-climate-conditions">The Great Re-range-ment: Changing Distributions of <em>Panthera leo</em> (Lion) and <em>Equus quagga</em> (Plains Zebra) Across Africa Under Present and Future Climate Conditions</h2>
+<div class="cell">
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="lionzebra_image.jpg" class="img-fluid figure-img"></p>
+</figure>
+</div>
+</div>
+</div>
+</section>
+<section id="introduction" class="level2">
+<h2 class="anchored" data-anchor-id="introduction">Introduction</h2>
+<p>This analysis focuses on understanding the distribution of <em>Panthera leo</em> and <em>Equus quagga</em> across Africa, under present and future climate conditions. The estimated lion population has decreased significantly over the years from 33,292 in 2006 to approximately 23,000 in 2023, with the steepest declines being observed in the West and Central Africa (Bauer, 2023). While some subpopulations in South Africa remain stable as a result of well-funded conservation management efforts, many others across the continent face increasing threats from changing climate, habitat loss, human threat and human-wildlife conflict. The case is the same for the plains zebra, <em>Equus quagga</em>. The estimated plains zebra population across Africa, as of 2016, is approximately 150 000- 250 000 and they are classed as ‘near threatened’ by the IUCN red list (King, 2016). While zebras are much more abundant than lions, their current population trend also shows a decline, with total population estimates in Africa being around 660,000 in 2002 (Hack et al.&nbsp;2002). Climate change has emerged as a critical factor that is influencing the distribution of these species in many ways. For example, through changing prey availability, vegetation growth and quality, increasing temperature stress and water availability. Moreover, as habitats become less suitable, <em>Panthera leo</em> and <em>Equus quagga</em> may encroach onto human settlements, increasing the potential from human-wildlife conflict and endangering these species even further. As such this spatial modelling analysis aims to uncover the trajectory of their distributions in a way that might inform future conservation strategies.</p>
+<p><em>Downloading species 1 and 2 data, the world map and the present bio-climactic data:</em></p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co">#Downloading gbif data for species 1, which in this case is 'Panthera leo', the lion. </span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="co">#Defines the filepath for storing the data</span></span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>species.gbif1_file <span class="ot">&lt;-</span> <span class="fu">here</span>(<span class="st">"data"</span>, <span class="st">"raw"</span>,    <span class="st">"species.gbif_lion.rds"</span>)</span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a><span class="co">#Check if the file exists (to prevent re downloading unnecessarily)</span></span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a><span class="co">#if the file does exist then load the saved data</span></span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> (<span class="sc">!</span><span class="fu">file.exists</span>(species.gbif1_file)) {</span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a>    species.gbif1 <span class="ot">&lt;-</span> <span class="fu">gbif</span>(<span class="st">"panthera"</span>, <span class="st">"leo"</span>, <span class="at">geo =</span> <span class="cn">TRUE</span>)</span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a>    <span class="fu">saveRDS</span>(species.gbif1, species.gbif1_file)</span>
+<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a>} <span class="cf">else</span> {</span>
+<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a>    species.gbif1 <span class="ot">&lt;-</span> <span class="fu">readRDS</span>(species.gbif1_file)</span>
+<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a><span class="co">#Extract the lat and lon columns from species.gbif1: combine lon (longitude) and lat (latitude columns from species.gbif1 into a matrix), removes rows containing NA values, converts matrix to data frame, renames columns 'lon' and 'lat'.</span></span>
+<span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a>species.coords1 <span class="ot">&lt;-</span> <span class="fu">cbind</span>(species.gbif1<span class="sc">$</span>lon, species.gbif1<span class="sc">$</span>lat)</span>
+<span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a>species.coords1 <span class="ot">&lt;-</span> <span class="fu">na.omit</span>(species.coords1)</span>
+<span id="cb1-18"><a href="#cb1-18" aria-hidden="true" tabindex="-1"></a>species.coords1 <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(species.coords1)</span>
+<span id="cb1-19"><a href="#cb1-19" aria-hidden="true" tabindex="-1"></a><span class="fu">colnames</span>(species.coords1) <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">"lon"</span>, <span class="st">"lat"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="co">#Downloading gbif data for species 2, which in this case is 'Equus quagga', the zebra. </span></span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>species.gbif2_file <span class="ot">&lt;-</span> <span class="fu">here</span>(<span class="st">"data"</span>, <span class="st">"raw"</span>, <span class="st">"species.gbif_zebra.rds"</span>)</span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a><span class="co">#Check if the file exists (to prevent re downloading unnecessarily)</span></span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a><span class="co">#if the file does exist then load the saved data</span></span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> (<span class="sc">!</span><span class="fu">file.exists</span>(species.gbif2_file)) {</span>
+<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a>    species.gbif2 <span class="ot">&lt;-</span> <span class="fu">gbif</span>(<span class="st">"equus"</span>, <span class="st">"quagga"</span>, <span class="at">geo =</span> <span class="cn">TRUE</span>)</span>
+<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a>    <span class="fu">saveRDS</span>(species.gbif2, species.gbif2_file)</span>
+<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a>} <span class="cf">else</span> {</span>
+<span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a>    species.gbif2 <span class="ot">&lt;-</span> <span class="fu">readRDS</span>(species.gbif2_file)   </span>
+<span id="cb2-11"><a href="#cb2-11" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb2-12"><a href="#cb2-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-13"><a href="#cb2-13" aria-hidden="true" tabindex="-1"></a><span class="co">#Extract the lat and lon columns from species.gbif2:</span></span>
+<span id="cb2-14"><a href="#cb2-14" aria-hidden="true" tabindex="-1"></a>species.coords2 <span class="ot">&lt;-</span> <span class="fu">cbind</span>(species.gbif2<span class="sc">$</span>lon, species.gbif2<span class="sc">$</span>lat)</span>
+<span id="cb2-15"><a href="#cb2-15" aria-hidden="true" tabindex="-1"></a>species.coords2 <span class="ot">&lt;-</span> <span class="fu">na.omit</span>(species.coords2)</span>
+<span id="cb2-16"><a href="#cb2-16" aria-hidden="true" tabindex="-1"></a>species.coords2 <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(species.coords2)</span>
+<span id="cb2-17"><a href="#cb2-17" aria-hidden="true" tabindex="-1"></a><span class="fu">colnames</span>(species.coords2) <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">"lon"</span>, <span class="st">"lat"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="co">#Downloading the world map and plotting </span></span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>wrld_simpl <span class="ot">&lt;-</span> <span class="fu">getMap</span>(<span class="at">resolution =</span> <span class="st">"coarse"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="fu">dir.create</span>(<span class="fu">here</span>(<span class="st">"data"</span>, <span class="st">"raw"</span>, <span class="st">"present"</span>), <span class="at">recursive =</span> <span class="cn">TRUE</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Warning in dir.create(here("data", "raw", "present"), recursive = TRUE):
+'C:\Users\hanab\OneDrive -
+Nexus365\spatialdistributionassignment3\data\raw\present' already exists</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Download bioclimatic data from the worldclim database and convert to Raster format</span></span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>bio.data <span class="ot">&lt;-</span> <span class="fu">worldclim_global</span>(<span class="at">var =</span> <span class="st">"bio"</span>, <span class="at">res =</span> <span class="dv">10</span>, <span class="at">path =</span> <span class="fu">here</span>(<span class="st">"data"</span>, <span class="st">"raw"</span>, <span class="st">"present"</span>))</span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a><span class="fu">names</span>(bio.data) <span class="ot">&lt;-</span> <span class="fu">paste0</span>(<span class="st">"bio"</span>, <span class="dv">1</span><span class="sc">:</span><span class="dv">19</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="fu">dir.create</span>(<span class="fu">here</span>(<span class="st">"data"</span>, <span class="st">"raw"</span>, <span class="st">"future"</span>), <span class="at">recursive =</span> <span class="cn">TRUE</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Warning in dir.create(here("data", "raw", "future"), recursive = TRUE):
+'C:\Users\hanab\OneDrive -
+Nexus365\spatialdistributionassignment3\data\raw\future' already exists</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="co">#Download future bio data</span></span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>future.bio.data <span class="ot">&lt;-</span> <span class="fu">cmip6_world</span>(</span>
+<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a>    <span class="at">model =</span> <span class="st">"CanESM5"</span>,</span>
+<span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a>    <span class="at">var =</span> <span class="st">"bio"</span>, </span>
+<span id="cb9-5"><a href="#cb9-5" aria-hidden="true" tabindex="-1"></a>    <span class="at">ssp =</span> <span class="st">"245"</span>,</span>
+<span id="cb9-6"><a href="#cb9-6" aria-hidden="true" tabindex="-1"></a>    <span class="at">res =</span> <span class="dv">10</span>,</span>
+<span id="cb9-7"><a href="#cb9-7" aria-hidden="true" tabindex="-1"></a>    <span class="at">time =</span> <span class="st">"2061-2080"</span>,</span>
+<span id="cb9-8"><a href="#cb9-8" aria-hidden="true" tabindex="-1"></a>    <span class="at">path =</span> <span class="fu">here</span>(<span class="st">"data"</span>, <span class="st">"raw"</span>, <span class="st">"future"</span>)</span>
+<span id="cb9-9"><a href="#cb9-9" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb9-10"><a href="#cb9-10" aria-hidden="true" tabindex="-1"></a><span class="fu">names</span>(future.bio.data) <span class="ot">&lt;-</span> <span class="fu">names</span>(bio.data)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<section id="q1-species-1-distribution-modelling" class="level3">
+<h3 class="anchored" data-anchor-id="q1-species-1-distribution-modelling"><strong>Q1: Species 1 distribution modelling</strong></h3>
+<p><strong>Run linear models to predict the present-day distribution of species 1 using climate variables and use them to present a map of its current distribution. Which set of climatic variables best explain the current distribution of the species?</strong></p>
+<p><u>a) Preparing the <em>Panthera leo</em> spatial data for ecological modelling</u></p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="co">#Plot the global panthera leo distribution on the world map, setting the xlim and ylim to span the -165,165 and -65,65 respectively (so all data points are visualised)</span></span>
+<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(wrld_simpl, <span class="at">xlim=</span><span class="fu">c</span>(<span class="sc">-</span><span class="dv">165</span>,<span class="dv">165</span>), <span class="at">ylim=</span><span class="fu">c</span>(<span class="sc">-</span><span class="dv">65</span>,<span class="dv">65</span>), <span class="at">axes =</span> <span class="cn">TRUE</span>, <span class="at">col =</span> <span class="st">"light yellow"</span>)</span>
+<span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Add points for panthera leo in red</span></span>
+<span id="cb10-4"><a href="#cb10-4" aria-hidden="true" tabindex="-1"></a><span class="fu">points</span>(species.coords1, <span class="at">col =</span> <span class="st">"red"</span>, <span class="at">cex =</span> <span class="fl">0.75</span>)</span>
+<span id="cb10-5"><a href="#cb10-5" aria-hidden="true" tabindex="-1"></a><span class="fu">title</span>(<span class="at">main =</span> <span class="st">'Global distribution of Panthera leo (lion)'</span>,</span>
+<span id="cb10-6"><a href="#cb10-6" aria-hidden="true" tabindex="-1"></a>      <span class="at">xlab =</span> <span class="st">'Longitude'</span>, </span>
+<span id="cb10-7"><a href="#cb10-7" aria-hidden="true" tabindex="-1"></a>      <span class="at">ylab =</span> <span class="st">'Latitude'</span>) </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="spatialdistributionassignment3_files/figure-html/unnamed-chunk-10-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="co">#Create a function to trim the coordinates</span></span>
+<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a>trim.coords <span class="ot">&lt;-</span> <span class="cf">function</span>(x, latmin, latmax, lonmin, lonmax) {</span>
+<span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a>    x[x<span class="sc">$</span>lon <span class="sc">&gt;=</span> lonmin <span class="sc">&amp;</span> x<span class="sc">$</span>lon <span class="sc">&lt;=</span> lonmax <span class="sc">&amp;</span> x<span class="sc">$</span>lat <span class="sc">&gt;=</span> latmin <span class="sc">&amp;</span> x<span class="sc">$</span>lat <span class="sc">&lt;=</span> latmax, ]</span>
+<span id="cb11-4"><a href="#cb11-4" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb11-5"><a href="#cb11-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-6"><a href="#cb11-6" aria-hidden="true" tabindex="-1"></a><span class="co">#Apply the function to species.coords1</span></span>
+<span id="cb11-7"><a href="#cb11-7" aria-hidden="true" tabindex="-1"></a>species1.coords.trim <span class="ot">&lt;-</span> <span class="fu">trim.coords</span>(species.coords1, <span class="at">latmin =</span> <span class="sc">-</span><span class="dv">40</span>, <span class="at">latmax =</span> <span class="dv">40</span>, <span class="at">lonmin =</span> <span class="sc">-</span><span class="dv">20</span>, <span class="at">lonmax =</span> <span class="dv">55</span>)</span>
+<span id="cb11-8"><a href="#cb11-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-9"><a href="#cb11-9" aria-hidden="true" tabindex="-1"></a><span class="co">#Define the file path for the processed data</span></span>
+<span id="cb11-10"><a href="#cb11-10" aria-hidden="true" tabindex="-1"></a>species1_trimmed_file <span class="ot">&lt;-</span> <span class="fu">here</span>(<span class="st">"data"</span>, <span class="st">"processed"</span>, <span class="st">"species1_coords_trimmed.rds"</span>)</span>
+<span id="cb11-11"><a href="#cb11-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-12"><a href="#cb11-12" aria-hidden="true" tabindex="-1"></a><span class="co">#Save the processed (trimmed) data for species 1</span></span>
+<span id="cb11-13"><a href="#cb11-13" aria-hidden="true" tabindex="-1"></a><span class="fu">saveRDS</span>(species1.coords.trim, species1_trimmed_file)</span>
+<span id="cb11-14"><a href="#cb11-14" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-15"><a href="#cb11-15" aria-hidden="true" tabindex="-1"></a><span class="co">#Plot data on world map again but with the trimmed coordinates</span></span>
+<span id="cb11-16"><a href="#cb11-16" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(wrld_simpl, <span class="at">xlim=</span><span class="fu">c</span>(<span class="sc">-</span><span class="dv">25</span>,<span class="dv">55</span>), <span class="at">ylim=</span><span class="fu">c</span>(<span class="sc">-</span><span class="dv">40</span>,<span class="dv">40</span>), <span class="at">axes =</span> <span class="cn">TRUE</span>, <span class="at">col =</span> <span class="st">"light yellow"</span>)</span>
+<span id="cb11-17"><a href="#cb11-17" aria-hidden="true" tabindex="-1"></a><span class="co"># Add points for panthera leo in red</span></span>
+<span id="cb11-18"><a href="#cb11-18" aria-hidden="true" tabindex="-1"></a><span class="fu">points</span>(species1.coords.trim, <span class="at">col =</span> <span class="st">"red"</span>, <span class="at">cex =</span> <span class="fl">0.75</span>)</span>
+<span id="cb11-19"><a href="#cb11-19" aria-hidden="true" tabindex="-1"></a><span class="fu">title</span>(<span class="at">main =</span> <span class="st">'Distribution of Panthera leo across Africa'</span>,</span>
+<span id="cb11-20"><a href="#cb11-20" aria-hidden="true" tabindex="-1"></a>      <span class="at">xlab =</span> <span class="st">'Longitude'</span>, </span>
+<span id="cb11-21"><a href="#cb11-21" aria-hidden="true" tabindex="-1"></a>      <span class="at">ylab =</span> <span class="st">'Latitude'</span>) </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="spatialdistributionassignment3_files/figure-html/unnamed-chunk-10-2.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="co">#Creates a rasterised land mask from the world map within the defined extent. This prevents pseudoabsences from being placed in ocean/uninhabitable areas.</span></span>
+<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a>mask <span class="ot">&lt;-</span> <span class="fu">rasterize</span>(wrld_simpl, <span class="fu">raster</span>(e, <span class="at">res=</span><span class="fl">0.5</span>))</span>
+<span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-4"><a href="#cb12-4" aria-hidden="true" tabindex="-1"></a><span class="co">#Because true absence data (places where the species is confirmed to be absent) is usually unavailable, the script now generates "pseudo-absences" (random background locations assumed not to contain the species). </span></span>
+<span id="cb12-5"><a href="#cb12-5" aria-hidden="true" tabindex="-1"></a><span class="co">#Generate 500 random background points within the study region</span></span>
+<span id="cb12-6"><a href="#cb12-6" aria-hidden="true" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">0</span>) <span class="co">#ensures random processes are reproducible</span></span>
+<span id="cb12-7"><a href="#cb12-7" aria-hidden="true" tabindex="-1"></a>bg <span class="ot">&lt;-</span> <span class="fu">randomPoints</span>(mask, <span class="dv">500</span>, <span class="at">ext=</span>e)</span>
+<span id="cb12-8"><a href="#cb12-8" aria-hidden="true" tabindex="-1"></a><span class="fu">colnames</span>(bg) <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">"lon"</span>, <span class="st">"lat"</span>)</span>
+<span id="cb12-9"><a href="#cb12-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-10"><a href="#cb12-10" aria-hidden="true" tabindex="-1"></a><span class="co">#Visualise the results</span></span>
+<span id="cb12-11"><a href="#cb12-11" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(<span class="fu">crop</span>(africa_map, e), <span class="at">col=</span><span class="st">"grey90"</span>, <span class="at">legend=</span><span class="cn">FALSE</span>, <span class="at">border =</span> <span class="cn">NA</span>, </span>
+<span id="cb12-12"><a href="#cb12-12" aria-hidden="true" tabindex="-1"></a>    <span class="at">main=</span><span class="st">"Panthera leo occurrences across Africa with background points"</span>)</span>
+<span id="cb12-13"><a href="#cb12-13" aria-hidden="true" tabindex="-1"></a><span class="fu">points</span>(bg, <span class="at">col=</span><span class="st">"black"</span>, <span class="at">pch=</span><span class="dv">20</span>, <span class="at">cex=</span><span class="fl">0.7</span>)</span>
+<span id="cb12-14"><a href="#cb12-14" aria-hidden="true" tabindex="-1"></a><span class="fu">points</span>(species1.coords.trim, <span class="at">col=</span><span class="st">"red"</span>, <span class="at">pch=</span><span class="dv">20</span>, <span class="at">cex=</span><span class="fl">0.7</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="spatialdistributionassignment3_files/figure-html/unnamed-chunk-12-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+<p><u>b) Creating a model to predict the present day distribution of <em>Panthera leo</em></u></p>
+<p>An optimal model will be one that more closely matches the observed presence and absence distribution of lions. The optimal model will contain appropriate climactic variables which are the most suitable predictors of lion distribution.Below I create the model with all 15 variables before refining it further.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="co">#create a model including all 15 climactic variables</span></span>
+<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a>full_model <span class="ot">&lt;-</span> <span class="fu">glm</span>(pa <span class="sc">~</span> bio1<span class="sc">+</span>bio2<span class="sc">+</span>bio3<span class="sc">+</span>bio4<span class="sc">+</span>bio5<span class="sc">+</span>bio6<span class="sc">+</span>bio7<span class="sc">+</span>bio8<span class="sc">+</span>bio9<span class="sc">+</span>bio10<span class="sc">+</span></span>
+<span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a>                     bio11<span class="sc">+</span>bio12<span class="sc">+</span>bio13<span class="sc">+</span>bio14<span class="sc">+</span>bio15, </span>
+<span id="cb13-4"><a href="#cb13-4" aria-hidden="true" tabindex="-1"></a>                  <span class="at">family =</span> <span class="fu">binomial</span>(<span class="at">link =</span> <span class="st">"logit"</span>), <span class="co">#tells R to use logistic regression</span></span>
+<span id="cb13-5"><a href="#cb13-5" aria-hidden="true" tabindex="-1"></a>                  <span class="at">data =</span> envtrain)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>Below I now select the most biologically relevant variables with respect to lion ecology. When modelling lion distribution I will prioritise bioclimactic variables which influence and are more relevant to habitat suitability, prey availability and water sources. I am therefore going to select the temp related variables: Bio1 (annual mean temperature), bio5 (max temp of the warmest month), bio9 (mean temp of the driest quarter), and precipitation related variables: bio12 (annual precipitation), bio13 (precipitation of the wettest month) and bio15 (precipitation seasonality). The precipitation related variables are key in affecting water sources and also the presence of vegetation (and therefore prey availability), which typically influence lion distribution.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb14"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="co">#creating a model which contains the most biologically relevant variables to lion distribution. </span></span>
+<span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a>gm1 <span class="ot">&lt;-</span> <span class="fu">glm</span>(pa <span class="sc">~</span> bio1<span class="sc">+</span>bio5<span class="sc">+</span>bio9<span class="sc">+</span>bio12<span class="sc">+</span>bio13<span class="sc">+</span>bio15, </span>
+<span id="cb14-3"><a href="#cb14-3" aria-hidden="true" tabindex="-1"></a>                  <span class="at">family =</span> <span class="fu">binomial</span>(<span class="at">link =</span> <span class="st">"logit"</span>), <span class="co">#tells R to use logistic regression</span></span>
+<span id="cb14-4"><a href="#cb14-4" aria-hidden="true" tabindex="-1"></a>                  <span class="at">data =</span> envtrain)</span>
+<span id="cb14-5"><a href="#cb14-5" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(gm1)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>
+Call:
+glm(formula = pa ~ bio1 + bio5 + bio9 + bio12 + bio13 + bio15, 
+    family = binomial(link = "logit"), data = envtrain)
+
+Coefficients:
+              Estimate Std. Error z value Pr(&gt;|z|)    
+(Intercept) 15.2945971  0.6565146   23.30  &lt; 2e-16 ***
+bio1         0.6859833  0.0440613   15.57  &lt; 2e-16 ***
+bio5        -0.5374083  0.0347997  -15.44  &lt; 2e-16 ***
+bio9        -0.3630678  0.0223847  -16.22  &lt; 2e-16 ***
+bio12       -0.0077009  0.0004692  -16.41  &lt; 2e-16 ***
+bio13        0.0398135  0.0024784   16.06  &lt; 2e-16 ***
+bio15       -0.0318608  0.0039577   -8.05 8.26e-16 ***
+---
+Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
+
+(Dispersion parameter for binomial family taken to be 1)
+
+    Null deviance: 4124  on 11618  degrees of freedom
+Residual deviance: 2828  on 11612  degrees of freedom
+  (4 observations deleted due to missingness)
+AIC: 2842
+
+Number of Fisher Scoring iterations: 7</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb16"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="co">#the p values indicate that all of these variables are significant predictors of lion distribution, however I feel that 6 variables overfits the model so I will try to refine which variables I choose. </span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb17"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="co">#Out of these biologically relevant variables, I will use varImp() to assess the importance of each variable , ranking most important variable at the top of the list</span></span>
+<span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a>importance <span class="ot">&lt;-</span> <span class="fu">varImp</span>(gm1, <span class="at">scale =</span> <span class="cn">FALSE</span>)</span>
+<span id="cb17-3"><a href="#cb17-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb17-4"><a href="#cb17-4" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(importance) </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>        Overall
+bio1  15.568833
+bio5  15.442879
+bio9  16.219466
+bio12 16.412771
+bio13 16.064403
+bio15  8.050292</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb19"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a><span class="co">#bio15, variability in precipitation, has an importance that is nearly half of the importance (8.042061) of the other variables. Given this, and the fact that I am retaining variables bio12 and bio13, I am going to exclude bio15 to make the model simpler and prevent overfitting. Bio12 and bio13 provide information on annual precipitation and precipitation of the wettest month which I feel is sufficient.</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>I will now assess the AIC of the model with 5 variables and the model with 6 variables to hopefully confirm that the 5 variable model is better.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb20"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a><span class="co">#creating model with 5 variables (excludes bio15) called gm1_reduced</span></span>
+<span id="cb20-2"><a href="#cb20-2" aria-hidden="true" tabindex="-1"></a>gm1_reduced <span class="ot">&lt;-</span> <span class="fu">glm</span>(pa <span class="sc">~</span> bio1 <span class="sc">+</span> bio5 <span class="sc">+</span> bio9 <span class="sc">+</span> bio12 <span class="sc">+</span> bio13, </span>
+<span id="cb20-3"><a href="#cb20-3" aria-hidden="true" tabindex="-1"></a>                   <span class="at">family =</span> <span class="fu">binomial</span>(<span class="at">link =</span> <span class="st">"logit"</span>), </span>
+<span id="cb20-4"><a href="#cb20-4" aria-hidden="true" tabindex="-1"></a>                   <span class="at">data =</span> envtrain)</span>
+<span id="cb20-5"><a href="#cb20-5" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(gm1_reduced)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>
+Call:
+glm(formula = pa ~ bio1 + bio5 + bio9 + bio12 + bio13, family = binomial(link = "logit"), 
+    data = envtrain)
+
+Coefficients:
+              Estimate Std. Error z value Pr(&gt;|z|)    
+(Intercept) 15.3304717  0.6559888   23.37   &lt;2e-16 ***
+bio1         0.6123803  0.0407568   15.03   &lt;2e-16 ***
+bio5        -0.6051559  0.0336342  -17.99   &lt;2e-16 ***
+bio9        -0.2941444  0.0198077  -14.85   &lt;2e-16 ***
+bio12       -0.0052307  0.0003556  -14.71   &lt;2e-16 ***
+bio13        0.0258805  0.0017873   14.48   &lt;2e-16 ***
+---
+Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
+
+(Dispersion parameter for binomial family taken to be 1)
+
+    Null deviance: 4124.0  on 11618  degrees of freedom
+Residual deviance: 2894.3  on 11613  degrees of freedom
+  (4 observations deleted due to missingness)
+AIC: 2906.3
+
+Number of Fisher Scoring iterations: 7</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb22"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a><span class="fu">AIC</span>(gm1, gm1_reduced)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>            df      AIC
+gm1          7 2841.964
+gm1_reduced  6 2906.274</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb24"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a><span class="co">#The AIC of gm1_reduced is higher, indicating that the model including bio15 is better. Although it had a lower VarImp, it is still important to include. I still need to decide which variable to remove as I want my model to contain max 5 variables to prevent overfitting.</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>Below, I am going to evaluate the six variables based on multicollinearity using VIF and hopefully remove variables which are collinear to improve the model.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb25"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a><span class="co">#assess multicollinearity using VIF</span></span>
+<span id="cb25-2"><a href="#cb25-2" aria-hidden="true" tabindex="-1"></a><span class="fu">vif</span>(gm1)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>     bio1      bio5      bio9     bio12     bio13     bio15 
+ 7.716559  7.010696  3.387334 11.619056  9.342725  5.385585 </code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb27"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb27-1"><a href="#cb27-1" aria-hidden="true" tabindex="-1"></a><span class="co">#the VIF output indicates that bio12 and bio13 have the highest VIF values, suggesting multicollinearity so to try and improve the model I will exclude bio12 first and compare model performance to gm1.</span></span>
+<span id="cb27-2"><a href="#cb27-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb27-3"><a href="#cb27-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb27-4"><a href="#cb27-4" aria-hidden="true" tabindex="-1"></a><span class="co">#Refit model excluding bio12</span></span>
+<span id="cb27-5"><a href="#cb27-5" aria-hidden="true" tabindex="-1"></a>gm1_test <span class="ot">&lt;-</span> <span class="fu">glm</span>(pa <span class="sc">~</span> bio1 <span class="sc">+</span> bio5 <span class="sc">+</span> bio9 <span class="sc">+</span> bio13 <span class="sc">+</span> bio15, </span>
+<span id="cb27-6"><a href="#cb27-6" aria-hidden="true" tabindex="-1"></a>                <span class="at">family =</span> <span class="fu">binomial</span>(<span class="at">link =</span> <span class="st">"logit"</span>), </span>
+<span id="cb27-7"><a href="#cb27-7" aria-hidden="true" tabindex="-1"></a>                <span class="at">data =</span> envtrain)</span>
+<span id="cb27-8"><a href="#cb27-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb27-9"><a href="#cb27-9" aria-hidden="true" tabindex="-1"></a><span class="fu">AIC</span>(gm1, gm1_test)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>         df      AIC
+gm1       7 2841.964
+gm1_test  6 3094.966</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb29"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb29-1"><a href="#cb29-1" aria-hidden="true" tabindex="-1"></a><span class="co">#The AIC of gm1_test increases compared to the AIC of gm1, suggesting that excluding bio12 hurts the model. I will now remove bio13 instead and assess AICs.</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb30"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb30-1"><a href="#cb30-1" aria-hidden="true" tabindex="-1"></a><span class="co">#Refit model excluding bio13</span></span>
+<span id="cb30-2"><a href="#cb30-2" aria-hidden="true" tabindex="-1"></a>gm1_test2 <span class="ot">&lt;-</span> <span class="fu">glm</span>(pa <span class="sc">~</span> bio1 <span class="sc">+</span> bio5 <span class="sc">+</span> bio9 <span class="sc">+</span> bio12 <span class="sc">+</span> bio15, </span>
+<span id="cb30-3"><a href="#cb30-3" aria-hidden="true" tabindex="-1"></a>                 <span class="at">family =</span> <span class="fu">binomial</span>(<span class="at">link =</span> <span class="st">"logit"</span>), </span>
+<span id="cb30-4"><a href="#cb30-4" aria-hidden="true" tabindex="-1"></a>                 <span class="at">data =</span> envtrain)</span>
+<span id="cb30-5"><a href="#cb30-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb30-6"><a href="#cb30-6" aria-hidden="true" tabindex="-1"></a><span class="fu">AIC</span>(gm1, gm1_test2)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>          df      AIC
+gm1        7 2841.964
+gm1_test2  6 3095.712</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb32"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb32-1"><a href="#cb32-1" aria-hidden="true" tabindex="-1"></a><span class="co">#Again, the AIC of the model excluding bio13 increases, suggesting gm1 is a better model. </span></span>
+<span id="cb32-2"><a href="#cb32-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb32-3"><a href="#cb32-3" aria-hidden="true" tabindex="-1"></a><span class="co">#bio5 and bio1 also have moderately high VIF's so I will remove these one at a time and assess the new model's performance.</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb33"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb33-1"><a href="#cb33-1" aria-hidden="true" tabindex="-1"></a><span class="co">#excluding bio5</span></span>
+<span id="cb33-2"><a href="#cb33-2" aria-hidden="true" tabindex="-1"></a>gm1_test3 <span class="ot">&lt;-</span> <span class="fu">glm</span>(pa <span class="sc">~</span> bio1 <span class="sc">+</span> bio9 <span class="sc">+</span> bio12 <span class="sc">+</span> bio13 <span class="sc">+</span> bio15, </span>
+<span id="cb33-3"><a href="#cb33-3" aria-hidden="true" tabindex="-1"></a>                 <span class="at">family =</span> <span class="fu">binomial</span>(<span class="at">link =</span> <span class="st">"logit"</span>), </span>
+<span id="cb33-4"><a href="#cb33-4" aria-hidden="true" tabindex="-1"></a>                 <span class="at">data =</span> envtrain)</span>
+<span id="cb33-5"><a href="#cb33-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb33-6"><a href="#cb33-6" aria-hidden="true" tabindex="-1"></a><span class="fu">AIC</span>(gm1, gm1_test3)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>          df      AIC
+gm1        7 2841.964
+gm1_test3  6 3139.940</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb35"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb35-1"><a href="#cb35-1" aria-hidden="true" tabindex="-1"></a><span class="co">#AIC of the model excluding bio5 increases compared to gm1 so again gm1 remains better. I will now exclude bio1.</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb36"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb36-1"><a href="#cb36-1" aria-hidden="true" tabindex="-1"></a><span class="co">#excluding bio1</span></span>
+<span id="cb36-2"><a href="#cb36-2" aria-hidden="true" tabindex="-1"></a>gm1_test4 <span class="ot">&lt;-</span> <span class="fu">glm</span>(pa <span class="sc">~</span> bio5 <span class="sc">+</span> bio9 <span class="sc">+</span> bio12 <span class="sc">+</span> bio13 <span class="sc">+</span> bio15, </span>
+<span id="cb36-3"><a href="#cb36-3" aria-hidden="true" tabindex="-1"></a>                 <span class="at">family =</span> <span class="fu">binomial</span>(<span class="at">link =</span> <span class="st">"logit"</span>), </span>
+<span id="cb36-4"><a href="#cb36-4" aria-hidden="true" tabindex="-1"></a>                 <span class="at">data =</span> envtrain)</span>
+<span id="cb36-5"><a href="#cb36-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb36-6"><a href="#cb36-6" aria-hidden="true" tabindex="-1"></a><span class="fu">AIC</span>(gm1, gm1_test4)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>          df      AIC
+gm1        7 2841.964
+gm1_test4  6 3207.079</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb38"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb38-1"><a href="#cb38-1" aria-hidden="true" tabindex="-1"></a><span class="co">#AIC of the model excluding bio1 increases compared to gm1 so again gm1 remains better. </span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb39"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb39-1"><a href="#cb39-1" aria-hidden="true" tabindex="-1"></a><span class="co">#For the sake of holisticness I am going to see if dropping bio9, even though it has a VIF value \&lt;5, makes the model any better.</span></span>
+<span id="cb39-2"><a href="#cb39-2" aria-hidden="true" tabindex="-1"></a>gm1_test5 <span class="ot">&lt;-</span> <span class="fu">glm</span>(pa <span class="sc">~</span> bio1 <span class="sc">+</span> bio5 <span class="sc">+</span> bio12 <span class="sc">+</span> bio13 <span class="sc">+</span> bio15, </span>
+<span id="cb39-3"><a href="#cb39-3" aria-hidden="true" tabindex="-1"></a>                 <span class="at">family =</span> <span class="fu">binomial</span>(<span class="at">link =</span> <span class="st">"logit"</span>), </span>
+<span id="cb39-4"><a href="#cb39-4" aria-hidden="true" tabindex="-1"></a>                 <span class="at">data =</span> envtrain)</span>
+<span id="cb39-5"><a href="#cb39-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb39-6"><a href="#cb39-6" aria-hidden="true" tabindex="-1"></a><span class="fu">AIC</span>(gm1, gm1_test5)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>          df      AIC
+gm1        7 2841.964
+gm1_test5  6 3180.180</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb41"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb41-1"><a href="#cb41-1" aria-hidden="true" tabindex="-1"></a><span class="co">#Again, the AIC increases, indicating gm1 is a better model. After systematically testing the removal of each variable using AIC, none of the biologically relevant predictors could be excluded without severely compromising model performance. As such, I have decided to keep all 6 variables as they are biologically and statistically important.</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>Finally, to conclude the model has good performance I will evaluate it by assessing AUC and Cor.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb42"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb42-1"><a href="#cb42-1" aria-hidden="true" tabindex="-1"></a><span class="co">#evaluate model</span></span>
+<span id="cb42-2"><a href="#cb42-2" aria-hidden="true" tabindex="-1"></a>gm1eval <span class="ot">&lt;-</span> <span class="fu">evaluate</span>(testpres, testbackg, gm1)</span>
+<span id="cb42-3"><a href="#cb42-3" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(gm1eval)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>class          : ModelEvaluation 
+n presences    : 11119 
+n absences     : 500 
+AUC            : 0.8221486 
+cor            : 0.4264997 
+max TPR+TNR at : 2.249401 </code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb44"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb44-1"><a href="#cb44-1" aria-hidden="true" tabindex="-1"></a><span class="co">#AUC is 0.8213 indicating good discriminatory power of the model to predict lion presence and absence, and cor is 0.4 which further supports the model's predicative performance. As such, I am going to retain all six variables as the best balance between biological relevance and statistical performance.</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p><u>c) Fitting the ‘gm1’ model:</u></p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb45"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb45-1"><a href="#cb45-1" aria-hidden="true" tabindex="-1"></a><span class="co">#Predicting the distribution of panthera leo based on the model, gm1. </span></span>
+<span id="cb45-2"><a href="#cb45-2" aria-hidden="true" tabindex="-1"></a>pg <span class="ot">&lt;-</span> <span class="fu">predict</span>(bio.data, gm1, <span class="at">ext =</span> e, <span class="at">type =</span> <span class="st">"response"</span>)</span>
+<span id="cb45-3"><a href="#cb45-3" aria-hidden="true" tabindex="-1"></a>pg <span class="ot">&lt;-</span> <span class="fu">crop</span>(pg, e)</span>
+<span id="cb45-4"><a href="#cb45-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb45-5"><a href="#cb45-5" aria-hidden="true" tabindex="-1"></a><span class="co">#pg is a raster layer, like for our bioclim variables, Now it is representing the probability of occurrence from our linear model, for our area of extent e.</span></span>
+<span id="cb45-6"><a href="#cb45-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb45-7"><a href="#cb45-7" aria-hidden="true" tabindex="-1"></a><span class="co">#Visualising predicted lion distribution based on gm1</span></span>
+<span id="cb45-8"><a href="#cb45-8" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(pg, <span class="at">main =</span> <span class="st">"Predicted suitable habitats for lions based on gm1"</span>)</span>
+<span id="cb45-9"><a href="#cb45-9" aria-hidden="true" tabindex="-1"></a><span class="co">#adding country boundaries</span></span>
+<span id="cb45-10"><a href="#cb45-10" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(wrld_simpl, <span class="at">add =</span> <span class="cn">TRUE</span>, <span class="at">border =</span> <span class="st">"dark grey"</span>)</span>
+<span id="cb45-11"><a href="#cb45-11" aria-hidden="true" tabindex="-1"></a><span class="co">#adding our observed locality data for lions</span></span>
+<span id="cb45-12"><a href="#cb45-12" aria-hidden="true" tabindex="-1"></a><span class="fu">points</span>(species1.coords.trim, <span class="at">col=</span><span class="st">"red"</span>, <span class="at">pch=</span><span class="dv">20</span>, <span class="at">cex=</span><span class="fl">1.5</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="spatialdistributionassignment3_files/figure-html/unnamed-chunk-24-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+<p>To generate this plot, I built a logistic regression model that predicted lion distribution (indicated by habitat suitability) using present bioclimatic variables. Starting with 15 climate variable predictors, I refined the model based on biological relevance, variable importance, AIC, and multicollinearity (VIF). I retained six key temperature and precipitation variables in the final model. Evaluation showed good predictive performance (AUC 0.82). The results of the model suggest lion distribution has been predicted well. The yellow regions which indicate good habitat suitability and therefore high probability of lion occurrence align nicely with the actual observed occurrences of lions (red points). The model has captured the presence of lions in South and East Africa well, as these are known lion strongholds. Notably, although the model predicts Madagascar as a suitable habitat for lions, there are no lion occurrences there. Lions have never naturally occurred in Madagascar likely due to geographical isolation and the ocean barrier that has historically prevented lion dispersal. As such this highlights a limit of these types of species distribution models in that they don’t account for biogeographical history or physical dispersal barriers.</p>
+<p>I am now going to apply a threshold to the model’s predictions to generate a binary raster that shows predicted presence and absence of <em>Panthera leo.</em></p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb46"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb46-1"><a href="#cb46-1" aria-hidden="true" tabindex="-1"></a><span class="co">#Calculate the threshold value for presence/absence based on the 'prevalence' method from the model evaluation</span></span>
+<span id="cb46-2"><a href="#cb46-2" aria-hidden="true" tabindex="-1"></a>tr <span class="ot">&lt;-</span> <span class="fu">threshold</span>(gm1eval, <span class="st">"prevalence"</span>)</span>
+<span id="cb46-3"><a href="#cb46-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb46-4"><a href="#cb46-4" aria-hidden="true" tabindex="-1"></a><span class="co">#increase the top margin so title isn't cut off</span></span>
+<span id="cb46-5"><a href="#cb46-5" aria-hidden="true" tabindex="-1"></a><span class="fu">par</span>(<span class="at">mar =</span> <span class="fu">c</span>(<span class="dv">5</span>, <span class="dv">4</span>, <span class="dv">6</span>, <span class="dv">2</span>))</span>
+<span id="cb46-6"><a href="#cb46-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb46-7"><a href="#cb46-7" aria-hidden="true" tabindex="-1"></a><span class="co">#plot binary raster map showing presence (true) and absence (false) of lions</span></span>
+<span id="cb46-8"><a href="#cb46-8" aria-hidden="true" tabindex="-1"></a><span class="co">#pg is the continuous probability raster which we convert to binary based upon the threshold</span></span>
+<span id="cb46-9"><a href="#cb46-9" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(pg <span class="sc">&gt;</span> tr, </span>
+<span id="cb46-10"><a href="#cb46-10" aria-hidden="true" tabindex="-1"></a>     <span class="at">main =</span> <span class="st">"Predicted absence (false) and presence (true) of lions based upon gm1"</span>, </span>
+<span id="cb46-11"><a href="#cb46-11" aria-hidden="true" tabindex="-1"></a>     <span class="at">xlab =</span> <span class="st">"Longitude"</span>, </span>
+<span id="cb46-12"><a href="#cb46-12" aria-hidden="true" tabindex="-1"></a>     <span class="at">ylab =</span> <span class="st">"Latitude"</span>)</span>
+<span id="cb46-13"><a href="#cb46-13" aria-hidden="true" tabindex="-1"></a><span class="co">#Plotting the world map and adding country borders</span></span>
+<span id="cb46-14"><a href="#cb46-14" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(wrld_simpl, <span class="at">add =</span> <span class="cn">TRUE</span>, <span class="at">border =</span> <span class="st">"dark grey"</span>)</span>
+<span id="cb46-15"><a href="#cb46-15" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb46-16"><a href="#cb46-16" aria-hidden="true" tabindex="-1"></a><span class="co">#Plotting the observed lion occurrences in red</span></span>
+<span id="cb46-17"><a href="#cb46-17" aria-hidden="true" tabindex="-1"></a><span class="fu">points</span>(species1.coords.trim, <span class="at">col =</span> <span class="st">"red"</span>, <span class="at">pch =</span> <span class="dv">20</span>, <span class="at">cex =</span> <span class="fl">0.8</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="spatialdistributionassignment3_files/figure-html/unnamed-chunk-25-1.png" class="img-fluid figure-img" width="768"></p>
+</figure>
+</div>
+</div>
+</div>
+<p>To generate this plot, I applied a threshold to the model’s predictions to generate a binary raster that shows predicted presence and absence of lions. The results of the plot show that the yellow regions, where lions are predicted to be present, closely align with the true lion occurrences as most of the red points are within the yellow area. By contrast, the purple regions which is where the model predicts lions would be absent, tend to align with true lion absences as there aren’t many red points in these regions. There appear to be a few possible false negatives where the model predicts lions to be absent when actually the red points indicate true occurrence. We cannot know for sure what is causing this; it may be the threshold is too strict (causing some true presences to be classified as absences) or perhaps the model is missing other climactic variables - for example, maybe there are specific water holes in these regions that are influencing lion distribution</p>
+<p><em>Which set of climatic variables best explain the current distribution of the species?</em></p>
+<p>I reduced the 15 climate variables to six variables based on biological relevance. I then assessed the importance of each variable and the VIFs of each variable. I removed each variable one at a time and assessed whether the new model was better than the model containing all 6. Ultimately, the model was better when it included all six. I found that the best set of climate variables are bio1, bio5 bio9 bio12, bio13 and bio15. Of course, there are many other ways to justify retention and removal of variables, however I have justified in earlier text why I feel these six are the best set for predicting lion distribution whilst simultaneously considering statistical reasoning and biological reasoning.</p>
+</section>
+<section id="q2-species-2-distribution-modelling" class="level3">
+<h3 class="anchored" data-anchor-id="q2-species-2-distribution-modelling"><strong>Q2: Species 2 distribution modelling</strong></h3>
+<p><strong>Run linear models to predict the present-day distribution of species 2 using climate variables and use them to present maps of its current distribution. Which set of climatic variables best explain the current distribution of the species?</strong></p>
+<p><u>a) Preparing the <em>Equus quagga</em> spatial data for ecological modelling</u></p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb47"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb47-1"><a href="#cb47-1" aria-hidden="true" tabindex="-1"></a><span class="co">#Plot the zebra distribution on the world map, setting the xlim and ylim to span the -165,165 and -65,65 respectively (so all data points are visualised)</span></span>
+<span id="cb47-2"><a href="#cb47-2" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(wrld_simpl, <span class="at">xlim=</span><span class="fu">c</span>(<span class="sc">-</span><span class="dv">165</span>,<span class="dv">165</span>), <span class="at">ylim=</span><span class="fu">c</span>(<span class="sc">-</span><span class="dv">65</span>,<span class="dv">65</span>), <span class="at">axes =</span> <span class="cn">TRUE</span>, <span class="at">col =</span> <span class="st">"light yellow"</span>)</span>
+<span id="cb47-3"><a href="#cb47-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Add points for zebra in blue</span></span>
+<span id="cb47-4"><a href="#cb47-4" aria-hidden="true" tabindex="-1"></a><span class="fu">points</span>(species.coords2, <span class="at">col =</span> <span class="st">"blue"</span>, <span class="at">cex =</span> <span class="fl">0.5</span>)</span>
+<span id="cb47-5"><a href="#cb47-5" aria-hidden="true" tabindex="-1"></a><span class="fu">title</span>(<span class="at">main =</span> <span class="st">'Global distribution of Equus quagga (zebra)'</span>,</span>
+<span id="cb47-6"><a href="#cb47-6" aria-hidden="true" tabindex="-1"></a>      <span class="at">xlab =</span> <span class="st">'Longitude'</span>, </span>
+<span id="cb47-7"><a href="#cb47-7" aria-hidden="true" tabindex="-1"></a>      <span class="at">ylab =</span> <span class="st">'Latitude'</span>) </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="spatialdistributionassignment3_files/figure-html/unnamed-chunk-27-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+<div class="sourceCode cell-code" id="cb48"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb48-1"><a href="#cb48-1" aria-hidden="true" tabindex="-1"></a><span class="co">#Apply the function created earlier, trim.coords(), to species.coords2</span></span>
+<span id="cb48-2"><a href="#cb48-2" aria-hidden="true" tabindex="-1"></a>species2.coords.trim <span class="ot">&lt;-</span> <span class="fu">trim.coords</span>(species.coords2, <span class="at">latmin =</span> <span class="sc">-</span><span class="dv">40</span>, <span class="at">latmax =</span> <span class="dv">40</span>, <span class="at">lonmin =</span> <span class="sc">-</span><span class="dv">20</span>, <span class="at">lonmax =</span> <span class="dv">55</span>)</span>
+<span id="cb48-3"><a href="#cb48-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb48-4"><a href="#cb48-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb48-5"><a href="#cb48-5" aria-hidden="true" tabindex="-1"></a><span class="co">#define the file path for the trimmed species 2 data</span></span>
+<span id="cb48-6"><a href="#cb48-6" aria-hidden="true" tabindex="-1"></a>species2_trimmed_file <span class="ot">&lt;-</span> <span class="fu">here</span>(<span class="st">"data"</span>, <span class="st">"processed"</span>, <span class="st">"species2_coords_trimmed.rds"</span>)</span>
+<span id="cb48-7"><a href="#cb48-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb48-8"><a href="#cb48-8" aria-hidden="true" tabindex="-1"></a><span class="co">#save the processed (trimmed) data</span></span>
+<span id="cb48-9"><a href="#cb48-9" aria-hidden="true" tabindex="-1"></a><span class="fu">saveRDS</span>(species2.coords.trim, species2_trimmed_file)</span>
+<span id="cb48-10"><a href="#cb48-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb48-11"><a href="#cb48-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb48-12"><a href="#cb48-12" aria-hidden="true" tabindex="-1"></a><span class="co">#Plot zebra data on world map again but with the trimmed coordinates</span></span>
+<span id="cb48-13"><a href="#cb48-13" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(wrld_simpl, <span class="at">xlim=</span><span class="fu">c</span>(<span class="sc">-</span><span class="dv">25</span>,<span class="dv">55</span>), <span class="at">ylim=</span><span class="fu">c</span>(<span class="sc">-</span><span class="dv">40</span>,<span class="dv">40</span>), <span class="at">axes =</span> <span class="cn">TRUE</span>, <span class="at">col =</span> <span class="st">"light yellow"</span>)</span>
+<span id="cb48-14"><a href="#cb48-14" aria-hidden="true" tabindex="-1"></a><span class="co"># Add points for zebra in blue</span></span>
+<span id="cb48-15"><a href="#cb48-15" aria-hidden="true" tabindex="-1"></a><span class="fu">points</span>(species2.coords.trim, <span class="at">col =</span> <span class="st">"blue"</span>, <span class="at">cex =</span> <span class="fl">0.5</span>)</span>
+<span id="cb48-16"><a href="#cb48-16" aria-hidden="true" tabindex="-1"></a><span class="fu">title</span>(<span class="at">main =</span> <span class="st">'Distribution of Equus quagga across Africa'</span>,</span>
+<span id="cb48-17"><a href="#cb48-17" aria-hidden="true" tabindex="-1"></a>      <span class="at">xlab =</span> <span class="st">'Longitude'</span>, </span>
+<span id="cb48-18"><a href="#cb48-18" aria-hidden="true" tabindex="-1"></a>      <span class="at">ylab =</span> <span class="st">'Latitude'</span>) </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="spatialdistributionassignment3_files/figure-html/unnamed-chunk-27-2.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb49"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb49-1"><a href="#cb49-1" aria-hidden="true" tabindex="-1"></a><span class="co">#Creates a rasterised land mask from the world map within the defined extent. This prevents pseudoabsences from being placed in ocean/uninhabitable areas.</span></span>
+<span id="cb49-2"><a href="#cb49-2" aria-hidden="true" tabindex="-1"></a>mask1 <span class="ot">&lt;-</span> <span class="fu">rasterize</span>(wrld_simpl, <span class="fu">raster</span>(e1, <span class="at">res=</span><span class="fl">0.5</span>))</span>
+<span id="cb49-3"><a href="#cb49-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb49-4"><a href="#cb49-4" aria-hidden="true" tabindex="-1"></a><span class="co">#Because true absence data (places where the species is confirmed to be absent) is usually unavailable, the script now generates "pseudo-absences" (random background locations assumed not to contain the species).</span></span>
+<span id="cb49-5"><a href="#cb49-5" aria-hidden="true" tabindex="-1"></a><span class="co"># Generate 500 random background points within the study region (zebra pseudo absence points)</span></span>
+<span id="cb49-6"><a href="#cb49-6" aria-hidden="true" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">0</span>) <span class="co">#makes randomised processes reproducible</span></span>
+<span id="cb49-7"><a href="#cb49-7" aria-hidden="true" tabindex="-1"></a>bg1 <span class="ot">&lt;-</span> <span class="fu">randomPoints</span>(mask1, <span class="dv">500</span>, <span class="at">ext=</span>e1)</span>
+<span id="cb49-8"><a href="#cb49-8" aria-hidden="true" tabindex="-1"></a><span class="fu">colnames</span>(bg1) <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">"lon"</span>, <span class="st">"lat"</span>)</span>
+<span id="cb49-9"><a href="#cb49-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb49-10"><a href="#cb49-10" aria-hidden="true" tabindex="-1"></a><span class="co"># Visualise the zebra presence and absence points</span></span>
+<span id="cb49-11"><a href="#cb49-11" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(<span class="fu">crop</span>(africa_map1, e1), <span class="at">col=</span><span class="st">"grey90"</span>, <span class="at">legend=</span><span class="cn">FALSE</span>, <span class="at">border =</span> <span class="cn">NA</span>, </span>
+<span id="cb49-12"><a href="#cb49-12" aria-hidden="true" tabindex="-1"></a>    <span class="at">main=</span><span class="st">"Equus quagga occurrences across Africa with background points"</span>)</span>
+<span id="cb49-13"><a href="#cb49-13" aria-hidden="true" tabindex="-1"></a><span class="fu">points</span>(bg1, <span class="at">col=</span><span class="st">"black"</span>, <span class="at">pch=</span><span class="dv">20</span>, <span class="at">cex=</span><span class="fl">0.7</span>)</span>
+<span id="cb49-14"><a href="#cb49-14" aria-hidden="true" tabindex="-1"></a><span class="fu">points</span>(species2.coords.trim, <span class="at">col=</span><span class="st">"blue"</span>, <span class="at">pch=</span><span class="dv">20</span>, <span class="at">cex=</span><span class="fl">0.5</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="spatialdistributionassignment3_files/figure-html/unnamed-chunk-29-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb50"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb50-1"><a href="#cb50-1" aria-hidden="true" tabindex="-1"></a><span class="co">#crop the climactic variable data to zebra extent</span></span>
+<span id="cb50-2"><a href="#cb50-2" aria-hidden="true" tabindex="-1"></a>bio.data1 <span class="ot">&lt;-</span> <span class="fu">crop</span>(bio.data, e1)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb51"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb51-1"><a href="#cb51-1" aria-hidden="true" tabindex="-1"></a><span class="co">#Prepare training dataset for zebra model</span></span>
+<span id="cb51-2"><a href="#cb51-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb51-3"><a href="#cb51-3" aria-hidden="true" tabindex="-1"></a><span class="co">#combine the presence data and the background data in one data frame</span></span>
+<span id="cb51-4"><a href="#cb51-4" aria-hidden="true" tabindex="-1"></a>train1 <span class="ot">&lt;-</span> <span class="fu">rbind</span>(species2.coords.trim, bg1)</span>
+<span id="cb51-5"><a href="#cb51-5" aria-hidden="true" tabindex="-1"></a><span class="co"># Create a vector of 1s and 0s to indicate presence (1) and absence (0)</span></span>
+<span id="cb51-6"><a href="#cb51-6" aria-hidden="true" tabindex="-1"></a>pb_train1 <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="fu">rep</span>(<span class="dv">1</span>, <span class="fu">nrow</span>(species2.coords.trim)), <span class="fu">rep</span>(<span class="dv">0</span>, <span class="fu">nrow</span>(bg1)))</span>
+<span id="cb51-7"><a href="#cb51-7" aria-hidden="true" tabindex="-1"></a><span class="co"># Extract the bioclimatic data for the presence and background points</span></span>
+<span id="cb51-8"><a href="#cb51-8" aria-hidden="true" tabindex="-1"></a>envtrain1 <span class="ot">&lt;-</span> <span class="fu">extract</span>(bio.data1, train1)</span>
+<span id="cb51-9"><a href="#cb51-9" aria-hidden="true" tabindex="-1"></a>envtrain1 <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(<span class="fu">cbind</span>(<span class="at">pa =</span> pb_train1, envtrain1)) <span class="co">#training dataset with both presence (1) and pseudo-absence (0) data.</span></span>
+<span id="cb51-10"><a href="#cb51-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb51-11"><a href="#cb51-11" aria-hidden="true" tabindex="-1"></a><span class="co"># And for each set separately</span></span>
+<span id="cb51-12"><a href="#cb51-12" aria-hidden="true" tabindex="-1"></a>testpres1 <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(<span class="fu">extract</span>(bio.data1, species2.coords.trim)) <span class="co">#test set with only presence data (for validation)</span></span>
+<span id="cb51-13"><a href="#cb51-13" aria-hidden="true" tabindex="-1"></a>testbackg1 <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(<span class="fu">extract</span>(bio.data1, bg1)) <span class="co">#test set with only background points (for validation).</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb52"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb52-1"><a href="#cb52-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Fit full model with all 15 variables</span></span>
+<span id="cb52-2"><a href="#cb52-2" aria-hidden="true" tabindex="-1"></a>full_model1 <span class="ot">&lt;-</span> <span class="fu">glm</span>(pa <span class="sc">~</span> bio1<span class="sc">+</span>bio2<span class="sc">+</span>bio3<span class="sc">+</span>bio4<span class="sc">+</span>bio5<span class="sc">+</span>bio6<span class="sc">+</span>bio7<span class="sc">+</span>bio8<span class="sc">+</span>bio9<span class="sc">+</span>bio10<span class="sc">+</span></span>
+<span id="cb52-3"><a href="#cb52-3" aria-hidden="true" tabindex="-1"></a>                     bio11<span class="sc">+</span>bio12<span class="sc">+</span>bio13<span class="sc">+</span>bio14<span class="sc">+</span>bio15, </span>
+<span id="cb52-4"><a href="#cb52-4" aria-hidden="true" tabindex="-1"></a>                  <span class="at">family =</span> <span class="fu">binomial</span>(<span class="at">link =</span> <span class="st">"logit"</span>), <span class="co">#tells R to use logistic regression</span></span>
+<span id="cb52-5"><a href="#cb52-5" aria-hidden="true" tabindex="-1"></a>                  <span class="at">data =</span> envtrain1)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p><u>b) Creating a model to predict the present day distribution of <em>Equus quagga</em></u></p>
+<p>I will now select the most biologically relevant climate variables with respect to the ecology of Equus quagga. I want to include key precipitation drivers as these impact water availability which in turn influences zebra foraging behaviour and therefore distribution. I think it makes sense to include bio12 (annual precipitation) as this directly influences grass productivity which makes up the majority of the plains zebra’s herbivorous diet. Annual precipitation also directly influences water availability which is important for determining zebra distribution given the necessity of water sources for survival. Bio15, precipitation seasonality is also important as zebras as they tend to migrate in response to seasonal rains. Bio14, precipitation of the driest month is important because it helps capture an important limiting factor of their survival; drought stress. As such low Bio14 values (very dry months) will help to identify regions where water drops below survival thresholds. The range of zebra’s is strongly linked to the presence of permanent water sources so this is an key variable influencing distribution.</p>
+<p>I also want to include key temperature drivers. Bio1, mean annual temperature, is important as plains zebras typically thrive in grasslands and savannas, which are warm tropical and subtropical environments. By contrast, regions with cooler annual temperatures may lack grasslands or be too cold for zebra tolerance, thus affecting their presence here. Bio4, temperature seasonality, reflects how temperature varies throughout the year which is important for determining zebra distribution as it affects water availability and foraging quality. Bio6, minimum temperature of the coldest month, is also important as zebras typically frequent warmer regions of Africa and very cold temperatures limit grass growth which also affects foraging behaviour. This variable would therefore help to define when their range is limited by colder areas across southern Africa and in elevated regions.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb53"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb53-1"><a href="#cb53-1" aria-hidden="true" tabindex="-1"></a><span class="co">#fitting a model with the chosen biologically relevant variables</span></span>
+<span id="cb53-2"><a href="#cb53-2" aria-hidden="true" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">0</span>) <span class="co">#setting a seed because output changed for some reason</span></span>
+<span id="cb53-3"><a href="#cb53-3" aria-hidden="true" tabindex="-1"></a>gm2 <span class="ot">&lt;-</span> <span class="fu">glm</span>(pa <span class="sc">~</span> bio12<span class="sc">+</span>bio15<span class="sc">+</span>bio14<span class="sc">+</span>bio1<span class="sc">+</span>bio4<span class="sc">+</span>bio6, </span>
+<span id="cb53-4"><a href="#cb53-4" aria-hidden="true" tabindex="-1"></a>                  <span class="at">family =</span> <span class="fu">binomial</span>(<span class="at">link =</span> <span class="st">"logit"</span>), <span class="co">#tells R to use logistic regression</span></span>
+<span id="cb53-5"><a href="#cb53-5" aria-hidden="true" tabindex="-1"></a>                  <span class="at">data =</span> envtrain1)</span>
+<span id="cb53-6"><a href="#cb53-6" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(gm2)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>
+Call:
+glm(formula = pa ~ bio12 + bio15 + bio14 + bio1 + bio4 + bio6, 
+    family = binomial(link = "logit"), data = envtrain1)
+
+Coefficients:
+              Estimate Std. Error z value Pr(&gt;|z|)    
+(Intercept) 17.5920767  0.8126302  21.648  &lt; 2e-16 ***
+bio12       -0.0033133  0.0002655 -12.478  &lt; 2e-16 ***
+bio15        0.0021131  0.0033328   0.634    0.526    
+bio14        0.0518368  0.0081212   6.383 1.74e-10 ***
+bio1        -0.0678213  0.0470702  -1.441    0.150    
+bio4        -0.0207265  0.0009472 -21.882  &lt; 2e-16 ***
+bio6        -0.4805434  0.0334678 -14.358  &lt; 2e-16 ***
+---
+Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
+
+(Dispersion parameter for binomial family taken to be 1)
+
+    Null deviance: 4467.4  on 16276  degrees of freedom
+Residual deviance: 2842.7  on 16270  degrees of freedom
+  (6 observations deleted due to missingness)
+AIC: 2856.7
+
+Number of Fisher Scoring iterations: 8</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb55"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb55-1"><a href="#cb55-1" aria-hidden="true" tabindex="-1"></a><span class="co">#the p values indicate that  bio12, bio14, bio4 and bio6 are all statistically significant variables for predicting zebra distribution while bio15 and bio1 aren't significant. Bio15 (precipitation seasonality) quantifies how much rainfall fluctuates through seasons, which is important for zebra's as they rely on seasonal water availability and subsequent vegetation growth. Given this biological importance, I am going to keep bio15 in the model. </span></span>
+<span id="cb55-2"><a href="#cb55-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb55-3"><a href="#cb55-3" aria-hidden="true" tabindex="-1"></a><span class="co">#The results also show bio1 (annual mean temperature) lacks statistical significance for determining zebra distribution, however I don't want to remove it straight away as I believe it also is still carries biological importance as zebra's are fairly temperature sensitive. </span></span>
+<span id="cb55-4"><a href="#cb55-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb55-5"><a href="#cb55-5" aria-hidden="true" tabindex="-1"></a><span class="co">#To inform the decision to drop bio1 I checked for multicollinearity. If bio1 is highly colinear with another variable then it would make sense to drop bio1 but retain the variable that captures similar information. </span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb56"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb56-1"><a href="#cb56-1" aria-hidden="true" tabindex="-1"></a><span class="co">#I calcuated VIFs (Variable Inflation Factor). This revealed that bio6 (minimum temp of coldest month) had a high VIF of 8.539939, indicating possible multicollinearity. I suspected this could be due to correlation with bio1 since both are temp related variables. </span></span>
+<span id="cb56-2"><a href="#cb56-2" aria-hidden="true" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">0</span>)</span>
+<span id="cb56-3"><a href="#cb56-3" aria-hidden="true" tabindex="-1"></a><span class="fu">vif</span>(gm2)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>   bio12    bio15    bio14     bio1     bio4     bio6 
+2.753807 2.652596 2.335751 4.637216 5.357642 8.536496 </code></pre>
+</div>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb58"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb58-1"><a href="#cb58-1" aria-hidden="true" tabindex="-1"></a><span class="co">#I removed bio1 and created a model 'gm2_test1', and then tested the VIF. The VIF for bio6 dropped to 2.647243, suggesting that bio1 was driving multicollinearity. As such, I have decided to retain bio6 (which is important for capturing cold limits) and drop bio1. </span></span>
+<span id="cb58-2"><a href="#cb58-2" aria-hidden="true" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">0</span>)</span>
+<span id="cb58-3"><a href="#cb58-3" aria-hidden="true" tabindex="-1"></a>gm2_test1 <span class="ot">&lt;-</span> <span class="fu">glm</span>(pa <span class="sc">~</span> bio12<span class="sc">+</span>bio15<span class="sc">+</span>bio14<span class="sc">+</span>bio4<span class="sc">+</span>bio6, </span>
+<span id="cb58-4"><a href="#cb58-4" aria-hidden="true" tabindex="-1"></a>                  <span class="at">family =</span> <span class="fu">binomial</span>(<span class="at">link =</span> <span class="st">"logit"</span>), <span class="co">#tells R to use logistic regression</span></span>
+<span id="cb58-5"><a href="#cb58-5" aria-hidden="true" tabindex="-1"></a>                  <span class="at">data =</span> envtrain1)</span>
+<span id="cb58-6"><a href="#cb58-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb58-7"><a href="#cb58-7" aria-hidden="true" tabindex="-1"></a><span class="fu">vif</span>(gm2_test1)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>   bio12    bio15    bio14     bio4     bio6 
+2.713598 2.100705 2.330019 4.159711 2.647473 </code></pre>
+</div>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb60"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb60-1"><a href="#cb60-1" aria-hidden="true" tabindex="-1"></a><span class="co">#As a final check of the new 5 variable model I compared the AIC value to that of the 6 variable model which included bio1 (gm2). The AIC difference was negligible (ΔAIC &lt; 2), indicating both models perform identically. gm2_test1 therefore provides a simpler model with 5 variables, without sacrificing power.  </span></span>
+<span id="cb60-2"><a href="#cb60-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb60-3"><a href="#cb60-3" aria-hidden="true" tabindex="-1"></a><span class="fu">AIC</span>(gm2, gm2_test1)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>          df      AIC
+gm2        7 2856.663
+gm2_test1  6 2856.765</code></pre>
+</div>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb62"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb62-1"><a href="#cb62-1" aria-hidden="true" tabindex="-1"></a><span class="co">#I then evaluated the gm2_test model predicative power with AUC. The AUC is 0.8575563 suggesting strong predicative power. The cor is 0.3, suggests a moderate alignment between the model's predictions and observed zebra presence. I am going to keep this model as this cor is consistent with ecological models where climate variables explain part of species distribution but not all of it. Also, combined with the high predicative power and my assessment of biological relevance of the variables, I feel the model remains appropriate. </span></span>
+<span id="cb62-2"><a href="#cb62-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb62-3"><a href="#cb62-3" aria-hidden="true" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">0</span>)</span>
+<span id="cb62-4"><a href="#cb62-4" aria-hidden="true" tabindex="-1"></a>gm2_test1eval <span class="ot">&lt;-</span> <span class="fu">evaluate</span>(testpres1, testbackg1, gm2_test1)</span>
+<span id="cb62-5"><a href="#cb62-5" aria-hidden="true" tabindex="-1"></a>gm2_test1eval</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>class          : ModelEvaluation 
+n presences    : 15777 
+n absences     : 500 
+AUC            : 0.8576092 
+cor            : 0.2956783 
+max TPR+TNR at : 3.007358 </code></pre>
+</div>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb64"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb64-1"><a href="#cb64-1" aria-hidden="true" tabindex="-1"></a><span class="co">#I also assessed AUC of the original 6 variable model, gm2. The AUC was almost identical, confirming that removing bio1 made the model simpler without decreasing predicative power.</span></span>
+<span id="cb64-2"><a href="#cb64-2" aria-hidden="true" tabindex="-1"></a>gm2eval <span class="ot">&lt;-</span> <span class="fu">evaluate</span>(testpres1, testbackg1, gm2)</span>
+<span id="cb64-3"><a href="#cb64-3" aria-hidden="true" tabindex="-1"></a>gm2eval</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>class          : ModelEvaluation 
+n presences    : 15777 
+n absences     : 500 
+AUC            : 0.8577418 
+cor            : 0.2943584 
+max TPR+TNR at : 2.995878 </code></pre>
+</div>
+</div>
+<p><u><em>c) Fitting the ‘gm2_test1’ model:</em></u></p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb66"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb66-1"><a href="#cb66-1" aria-hidden="true" tabindex="-1"></a><span class="co">#Predicting the distribution of Equus quagga based on the model, gm2_test1. </span></span>
+<span id="cb66-2"><a href="#cb66-2" aria-hidden="true" tabindex="-1"></a>pg1 <span class="ot">&lt;-</span> <span class="fu">predict</span>(bio.data1, gm2_test1, <span class="at">ext =</span> e1, <span class="at">type =</span> <span class="st">"response"</span>)</span>
+<span id="cb66-3"><a href="#cb66-3" aria-hidden="true" tabindex="-1"></a>pg1 <span class="ot">&lt;-</span> <span class="fu">crop</span>(pg1, e1)</span>
+<span id="cb66-4"><a href="#cb66-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb66-5"><a href="#cb66-5" aria-hidden="true" tabindex="-1"></a><span class="co"># pg1 is a raster layer, like for our bioclim variables, but now representing the</span></span>
+<span id="cb66-6"><a href="#cb66-6" aria-hidden="true" tabindex="-1"></a><span class="co"># probability of occurrence from our linear model, for or area of extent e.</span></span>
+<span id="cb66-7"><a href="#cb66-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb66-8"><a href="#cb66-8" aria-hidden="true" tabindex="-1"></a><span class="co">#Visualising predicted zebra distribution based on 'gm2_test1'</span></span>
+<span id="cb66-9"><a href="#cb66-9" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(pg1, <span class="at">main =</span> <span class="st">"Predicted suitable habitats for zebras based on gm2_test1"</span>)</span>
+<span id="cb66-10"><a href="#cb66-10" aria-hidden="true" tabindex="-1"></a><span class="co"># Add country boundaries</span></span>
+<span id="cb66-11"><a href="#cb66-11" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(wrld_simpl, <span class="at">add =</span> <span class="cn">TRUE</span>, <span class="at">border =</span> <span class="st">"dark grey"</span>)</span>
+<span id="cb66-12"><a href="#cb66-12" aria-hidden="true" tabindex="-1"></a><span class="co"># Add our observed locality data for zebras</span></span>
+<span id="cb66-13"><a href="#cb66-13" aria-hidden="true" tabindex="-1"></a><span class="fu">points</span>(species2.coords.trim, <span class="at">col=</span><span class="st">"blue"</span>, <span class="at">pch=</span><span class="dv">20</span>, <span class="at">cex=</span><span class="fl">0.5</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="spatialdistributionassignment3_files/figure-html/unnamed-chunk-39-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+<p>To generate this plot, I built a logistic regression model that predicted zebra distribution (indicated by habitat suitability) using present bioclimatic variables. Starting with 15 climate variable predictors, I refined the model based on biological relevance, variable importance, AIC, and multicollinearity (VIF). I retained five key temperature and precipitation variables in the final model. Evaluation showed good predictive performance (AUC 0.8).</p>
+<p>The model appears to predict zebra habitat suitability fairly well; the yellow regions indicate high habitat suitability suggesting that zebra’s occur here. This aligns with the real occurrence points, the majority of which are in the yellow region. There are some yellow or greenish areas where the model predicts habitat suitability but zebras don’t have occurrences here. This could for example be due to lack of occurrence data in these regions. Alternatively, the model could have over-predicted that these areas are suitable, and the lack of species may be due to another unmodelled factor for example land use etc. By contrast, the purple regions predict low habitat suitability and align with the fact that observed occurrences aren’t in the purple areas.</p>
+<p>I am now going to apply a threshold to the model’s predictions to generate a binary raster that shows predicted presence and absence of <em>Equus quagga.</em></p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb67"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb67-1"><a href="#cb67-1" aria-hidden="true" tabindex="-1"></a><span class="co">#Calculate the threshold value for presence/absence based on the 'prevalence' method from the model evaluation</span></span>
+<span id="cb67-2"><a href="#cb67-2" aria-hidden="true" tabindex="-1"></a>tr1 <span class="ot">&lt;-</span> <span class="fu">threshold</span>(gm2_test1eval, <span class="st">"prevalence"</span>)</span>
+<span id="cb67-3"><a href="#cb67-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb67-4"><a href="#cb67-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Increase the top margin so title isn't cut off</span></span>
+<span id="cb67-5"><a href="#cb67-5" aria-hidden="true" tabindex="-1"></a><span class="fu">par</span>(<span class="at">mar =</span> <span class="fu">c</span>(<span class="dv">5</span>, <span class="dv">4</span>, <span class="dv">6</span>, <span class="dv">2</span>))</span>
+<span id="cb67-6"><a href="#cb67-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb67-7"><a href="#cb67-7" aria-hidden="true" tabindex="-1"></a><span class="co">#plot binary raster map showing presence (true) and absence (false) of zebras</span></span>
+<span id="cb67-8"><a href="#cb67-8" aria-hidden="true" tabindex="-1"></a><span class="co">#pg1 is the zebra continuous probability raster which we convert to binary raster based upon the threshold</span></span>
+<span id="cb67-9"><a href="#cb67-9" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(pg1 <span class="sc">&gt;</span> tr1, </span>
+<span id="cb67-10"><a href="#cb67-10" aria-hidden="true" tabindex="-1"></a>     <span class="at">main =</span> <span class="st">"Predicted absence (false)/presence (true) of zebras based upon gm2_test1"</span>, </span>
+<span id="cb67-11"><a href="#cb67-11" aria-hidden="true" tabindex="-1"></a>     <span class="at">xlab =</span> <span class="st">"Longitude"</span>, </span>
+<span id="cb67-12"><a href="#cb67-12" aria-hidden="true" tabindex="-1"></a>     <span class="at">ylab =</span> <span class="st">"Latitude"</span>)</span>
+<span id="cb67-13"><a href="#cb67-13" aria-hidden="true" tabindex="-1"></a><span class="co">#Plotting th world map and adding country borders</span></span>
+<span id="cb67-14"><a href="#cb67-14" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(wrld_simpl, <span class="at">add =</span> <span class="cn">TRUE</span>, <span class="at">border =</span> <span class="st">"dark grey"</span>)</span>
+<span id="cb67-15"><a href="#cb67-15" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb67-16"><a href="#cb67-16" aria-hidden="true" tabindex="-1"></a><span class="co">#Plotting the observed zebra occurrences in cyan so it shows up against the dark purple</span></span>
+<span id="cb67-17"><a href="#cb67-17" aria-hidden="true" tabindex="-1"></a><span class="fu">points</span>(species2.coords.trim, <span class="at">col =</span> <span class="st">"cyan"</span>, <span class="at">pch =</span> <span class="dv">20</span>, <span class="at">cex =</span> <span class="fl">0.8</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="spatialdistributionassignment3_files/figure-html/unnamed-chunk-40-1.png" class="img-fluid figure-img" width="768"></p>
+</figure>
+</div>
+</div>
+</div>
+<p>To generate this plot, I applied a threshold to the model’s predictions to generate a binary raster that shows predicted presence and absence of zebras. The model predicts zebra absence and presence fairly well. The purple regions are where the model predicts zebras would be absent. This aligns with the majority of the occurrence points that do indeed show zebra’s are absent in most of these regions. This also makes sense in terms of the fact that plains zebras are known to inhabit south and east Africa rather than the north where the majority of purple is. The yellow shows where the model predicts zebras to be present. This aligns with the known occurrence points appearing in the yellow region. There are a few occurrence points where the model predicts zebras would be absent, suggesting that while the model captures general distribution well, in some areas perhaps it underestimates habitat suitability. This could perhaps be local microclimate factors or environmental conditions in these regions that actually do make the land suitable for zebras (e.g.&nbsp;the presence of waterholes) but isn’t captured in the broader climate variables used in the model.</p>
+</section>
+<section id="q3-distribution-overlap" class="level3">
+<h3 class="anchored" data-anchor-id="q3-distribution-overlap"><strong>Q3: Distribution Overlap</strong></h3>
+<p><strong>Plot the overlap in distribution of the two species. Devise and calculate a metric for the degree of overlap between their ranges, explaining how you calculated it.</strong></p>
+<p>I am going to apply a buffer to the zebra and lion rasters to accept nearby occurrences, so that any pixels that say absent but are nearby to pixels that say present, can be converted to saying the species is present. This is to acccount for the ecological reality that animals move and likely interact if depicted as neighbouring each other. Then I will measure overlap according to this. The 0.5 degree buffer, which reflects ~55 km at the equator was chosen based on movement ecology and the home ranges of lions and zebras. While this buffer captures short term movement and local-scale interactions, it is however important to note that in future analysis I would consider testing larger buffers which would reflect the upper limits of lion and zebra range. According to (Nams et al, 2023), mean lion home range can be anywhere between 20-455km squared. Another study, (Klingel, 1969) also notes that the plains zebra can roam up to 1000km squared or even larger, and as such future analysis should use a buffer which reflects these larger roaming ranges.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb68"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb68-1"><a href="#cb68-1" aria-hidden="true" tabindex="-1"></a><span class="co">#Creating buffer for lions and zebras</span></span>
+<span id="cb68-2"><a href="#cb68-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(terra)</span>
+<span id="cb68-3"><a href="#cb68-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb68-4"><a href="#cb68-4" aria-hidden="true" tabindex="-1"></a><span class="co">#convert binary raster from a RasterLayer to spat raster because I want to apply a buffer using terra() but terra::buffer() function won’t accept a RasterLayer.</span></span>
+<span id="cb68-5"><a href="#cb68-5" aria-hidden="true" tabindex="-1"></a><span class="co"># Convert thresholded raster properly into numeric (0/1) with terra's ifel()</span></span>
+<span id="cb68-6"><a href="#cb68-6" aria-hidden="true" tabindex="-1"></a>zebra_binary_spat <span class="ot">&lt;-</span> <span class="fu">ifel</span>(pg1 <span class="sc">&gt;</span> tr1, <span class="dv">1</span>, <span class="dv">0</span>)</span>
+<span id="cb68-7"><a href="#cb68-7" aria-hidden="true" tabindex="-1"></a>lion_binary_spat  <span class="ot">&lt;-</span> <span class="fu">ifel</span>(pg <span class="sc">&gt;</span> tr, <span class="dv">1</span>, <span class="dv">0</span>)</span>
+<span id="cb68-8"><a href="#cb68-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb68-9"><a href="#cb68-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb68-10"><a href="#cb68-10" aria-hidden="true" tabindex="-1"></a><span class="co">#check raster resolution  so that when I make the buffer 0.5 degrees, I know how many pixels that distance represents and can specify the buffer accordingly.</span></span>
+<span id="cb68-11"><a href="#cb68-11" aria-hidden="true" tabindex="-1"></a><span class="fu">res</span>(zebra_binary_spat)</span>
+<span id="cb68-12"><a href="#cb68-12" aria-hidden="true" tabindex="-1"></a><span class="fu">res</span>(lion_binary_spat)</span>
+<span id="cb68-13"><a href="#cb68-13" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb68-14"><a href="#cb68-14" aria-hidden="true" tabindex="-1"></a><span class="co">#calculates the number of pixels that correspond to 0.5 degrees</span></span>
+<span id="cb68-15"><a href="#cb68-15" aria-hidden="true" tabindex="-1"></a>pixel_size <span class="ot">&lt;-</span> <span class="fu">res</span>(zebra_binary_spat)[<span class="dv">1</span>]  <span class="co"># 0.1666667</span></span>
+<span id="cb68-16"><a href="#cb68-16" aria-hidden="true" tabindex="-1"></a>buffer_deg <span class="ot">&lt;-</span> <span class="fl">0.5</span></span>
+<span id="cb68-17"><a href="#cb68-17" aria-hidden="true" tabindex="-1"></a>buffer_pixels <span class="ot">&lt;-</span> <span class="fu">round</span>(buffer_deg <span class="sc">/</span> pixel_size)  <span class="co"># ~3 pixels</span></span>
+<span id="cb68-18"><a href="#cb68-18" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb68-19"><a href="#cb68-19" aria-hidden="true" tabindex="-1"></a><span class="co">#creates a square matrix that will be used as a weight matrix for the focal function: (square of (2*buffer_pixels + 1))</span></span>
+<span id="cb68-20"><a href="#cb68-20" aria-hidden="true" tabindex="-1"></a>w <span class="ot">&lt;-</span> <span class="fu">matrix</span>(<span class="dv">1</span>, <span class="at">nrow =</span> (<span class="dv">2</span> <span class="sc">*</span> buffer_pixels <span class="sc">+</span> <span class="dv">1</span>), <span class="at">ncol =</span> (<span class="dv">2</span> <span class="sc">*</span> buffer_pixels <span class="sc">+</span> <span class="dv">1</span>))</span>
+<span id="cb68-21"><a href="#cb68-21" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb68-22"><a href="#cb68-22" aria-hidden="true" tabindex="-1"></a><span class="co">#apply the focal function to the raster layers to expand (buffer) the presence pixels</span></span>
+<span id="cb68-23"><a href="#cb68-23" aria-hidden="true" tabindex="-1"></a>zebra_buffer <span class="ot">&lt;-</span> <span class="fu">focal</span>(zebra_binary_spat, <span class="at">w =</span> w, <span class="at">fun =</span> max, <span class="at">na.policy =</span> <span class="st">'omit'</span>)</span>
+<span id="cb68-24"><a href="#cb68-24" aria-hidden="true" tabindex="-1"></a>lion_buffer <span class="ot">&lt;-</span> <span class="fu">focal</span>(lion_binary_spat, <span class="at">w =</span> w, <span class="at">fun =</span> max, <span class="at">na.policy =</span> <span class="st">'omit'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb69"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb69-1"><a href="#cb69-1" aria-hidden="true" tabindex="-1"></a><span class="co">#Visualising lion buffer</span></span>
+<span id="cb69-2"><a href="#cb69-2" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(lion_buffer, </span>
+<span id="cb69-3"><a href="#cb69-3" aria-hidden="true" tabindex="-1"></a>     <span class="at">main =</span> <span class="st">"Predicted lion distribution with 0.5° buffer (0=absent, 1=present) "</span>, </span>
+<span id="cb69-4"><a href="#cb69-4" aria-hidden="true" tabindex="-1"></a>     <span class="at">col =</span> <span class="fu">c</span>(<span class="st">"purple"</span>, <span class="st">"yellow"</span>), </span>
+<span id="cb69-5"><a href="#cb69-5" aria-hidden="true" tabindex="-1"></a>     <span class="at">xlab =</span> <span class="st">"Longitude"</span>, </span>
+<span id="cb69-6"><a href="#cb69-6" aria-hidden="true" tabindex="-1"></a>     <span class="at">ylab =</span> <span class="st">"Latitude"</span>,</span>
+<span id="cb69-7"><a href="#cb69-7" aria-hidden="true" tabindex="-1"></a>     <span class="at">legend =</span> <span class="cn">TRUE</span>)</span>
+<span id="cb69-8"><a href="#cb69-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb69-9"><a href="#cb69-9" aria-hidden="true" tabindex="-1"></a><span class="co"># Add world map</span></span>
+<span id="cb69-10"><a href="#cb69-10" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(wrld_simpl, <span class="at">add =</span> <span class="cn">TRUE</span>, <span class="at">border =</span> <span class="st">"dark grey"</span>)</span>
+<span id="cb69-11"><a href="#cb69-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb69-12"><a href="#cb69-12" aria-hidden="true" tabindex="-1"></a><span class="co">#Add observed lion occurrences in cyan</span></span>
+<span id="cb69-13"><a href="#cb69-13" aria-hidden="true" tabindex="-1"></a><span class="fu">points</span>(species1.coords.trim, <span class="at">col =</span> <span class="st">"red"</span>, <span class="at">pch =</span> <span class="dv">20</span>, <span class="at">cex =</span> <span class="fl">0.8</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="spatialdistributionassignment3_files/figure-html/unnamed-chunk-43-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb70"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb70-1"><a href="#cb70-1" aria-hidden="true" tabindex="-1"></a><span class="co">#Repeat with zebras</span></span>
+<span id="cb70-2"><a href="#cb70-2" aria-hidden="true" tabindex="-1"></a><span class="co">#Visualising zebra buffer</span></span>
+<span id="cb70-3"><a href="#cb70-3" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(zebra_buffer, </span>
+<span id="cb70-4"><a href="#cb70-4" aria-hidden="true" tabindex="-1"></a>     <span class="at">main =</span> <span class="st">"Predicted zebra distribution with 0.5° buffer (0=absent, 1=present)"</span>, </span>
+<span id="cb70-5"><a href="#cb70-5" aria-hidden="true" tabindex="-1"></a>     <span class="at">col =</span> <span class="fu">c</span>(<span class="st">"purple"</span>, <span class="st">"yellow"</span>), </span>
+<span id="cb70-6"><a href="#cb70-6" aria-hidden="true" tabindex="-1"></a>     <span class="at">xlab =</span> <span class="st">"Longitude"</span>, </span>
+<span id="cb70-7"><a href="#cb70-7" aria-hidden="true" tabindex="-1"></a>     <span class="at">ylab =</span> <span class="st">"Latitude"</span>,</span>
+<span id="cb70-8"><a href="#cb70-8" aria-hidden="true" tabindex="-1"></a>     <span class="at">legend =</span> <span class="cn">TRUE</span>)</span>
+<span id="cb70-9"><a href="#cb70-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb70-10"><a href="#cb70-10" aria-hidden="true" tabindex="-1"></a><span class="co">#Add world map</span></span>
+<span id="cb70-11"><a href="#cb70-11" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(wrld_simpl, <span class="at">add =</span> <span class="cn">TRUE</span>, <span class="at">border =</span> <span class="st">"dark grey"</span>)</span>
+<span id="cb70-12"><a href="#cb70-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb70-13"><a href="#cb70-13" aria-hidden="true" tabindex="-1"></a><span class="co">#Add observed zebra occurrences in cyan</span></span>
+<span id="cb70-14"><a href="#cb70-14" aria-hidden="true" tabindex="-1"></a><span class="fu">points</span>(species2.coords.trim, <span class="at">col =</span> <span class="st">"blue"</span>, <span class="at">pch =</span> <span class="dv">20</span>, <span class="at">cex =</span> <span class="fl">0.8</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="spatialdistributionassignment3_files/figure-html/unnamed-chunk-44-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+<p>Both of the above plots were generated by applying a buffer and then visualising the predicted distributions. I can see that the edges of the yellow (presence) have expanded slightly, indicating that neighboring pixels have been converted to assume presence (if they were neighboring a pixel where the species was present).</p>
+<p>Now I will overlay the distributions with the buffers applied to visually inspect overlap.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb71"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb71-1"><a href="#cb71-1" aria-hidden="true" tabindex="-1"></a><span class="co">#check the extent and resolution of the lion and zebra buffered rasters. They need to be identical in order to overlay the rasters.</span></span>
+<span id="cb71-2"><a href="#cb71-2" aria-hidden="true" tabindex="-1"></a><span class="fu">ext</span>(zebra_buffer)</span>
+<span id="cb71-3"><a href="#cb71-3" aria-hidden="true" tabindex="-1"></a><span class="fu">ext</span>(lion_buffer)</span>
+<span id="cb71-4"><a href="#cb71-4" aria-hidden="true" tabindex="-1"></a><span class="fu">res</span>(zebra_buffer)</span>
+<span id="cb71-5"><a href="#cb71-5" aria-hidden="true" tabindex="-1"></a><span class="fu">res</span>(lion_buffer)</span>
+<span id="cb71-6"><a href="#cb71-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb71-7"><a href="#cb71-7" aria-hidden="true" tabindex="-1"></a><span class="co">#They weren't identical; the zebra extent is smaller so I want to crop lion buffered raster to be the same as the zebra's. I also note that in future analysis I would avoid cropping extents by ensring they are already the same size at the start. </span></span>
+<span id="cb71-8"><a href="#cb71-8" aria-hidden="true" tabindex="-1"></a>lion_crop <span class="ot">&lt;-</span> <span class="fu">crop</span>(lion_buffer, zebra_buffer)</span>
+<span id="cb71-9"><a href="#cb71-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb71-10"><a href="#cb71-10" aria-hidden="true" tabindex="-1"></a><span class="co">#Double check the extent and resolution now match (the output shows they do)</span></span>
+<span id="cb71-11"><a href="#cb71-11" aria-hidden="true" tabindex="-1"></a><span class="fu">all.equal</span>(<span class="fu">res</span>(zebra_buffer), <span class="fu">res</span>(lion_crop))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb72"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb72-1"><a href="#cb72-1" aria-hidden="true" tabindex="-1"></a><span class="co">#Now I can add the two buffered rasters together</span></span>
+<span id="cb72-2"><a href="#cb72-2" aria-hidden="true" tabindex="-1"></a>overlap_raster <span class="ot">&lt;-</span> zebra_buffer <span class="sc">+</span> lion_crop</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb73"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb73-1"><a href="#cb73-1" aria-hidden="true" tabindex="-1"></a><span class="co">#Now I can visualise the overlayed rasters to see the overlap before calculating it</span></span>
+<span id="cb73-2"><a href="#cb73-2" aria-hidden="true" tabindex="-1"></a><span class="co">#plotting the raster with colouring</span></span>
+<span id="cb73-3"><a href="#cb73-3" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(overlap_raster, </span>
+<span id="cb73-4"><a href="#cb73-4" aria-hidden="true" tabindex="-1"></a>     <span class="at">breaks =</span> <span class="fu">c</span>(<span class="sc">-</span><span class="fl">0.1</span>, <span class="fl">0.5</span>, <span class="fl">1.5</span>, <span class="fl">2.5</span>),  <span class="co">#definingthe value ranges</span></span>
+<span id="cb73-5"><a href="#cb73-5" aria-hidden="true" tabindex="-1"></a>     <span class="at">col =</span> <span class="fu">c</span>(<span class="st">"white"</span>, <span class="st">"orange"</span>, <span class="st">"darkgreen"</span>),  </span>
+<span id="cb73-6"><a href="#cb73-6" aria-hidden="true" tabindex="-1"></a>     <span class="at">main =</span> <span class="st">"The overlap of predicted zebra and lion presence with a (0.5° Buffer) applied"</span>, </span>
+<span id="cb73-7"><a href="#cb73-7" aria-hidden="true" tabindex="-1"></a>     <span class="at">xlab =</span> <span class="st">"Longitude"</span>, </span>
+<span id="cb73-8"><a href="#cb73-8" aria-hidden="true" tabindex="-1"></a>     <span class="at">ylab =</span> <span class="st">"Latitude"</span>, </span>
+<span id="cb73-9"><a href="#cb73-9" aria-hidden="true" tabindex="-1"></a>     <span class="at">legend =</span> <span class="cn">FALSE</span>,   <span class="co">#turns off auto legend </span></span>
+<span id="cb73-10"><a href="#cb73-10" aria-hidden="true" tabindex="-1"></a>     <span class="at">axes =</span> <span class="cn">TRUE</span>)</span>
+<span id="cb73-11"><a href="#cb73-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb73-12"><a href="#cb73-12" aria-hidden="true" tabindex="-1"></a><span class="co">#increases the top margin so title isn't cut off</span></span>
+<span id="cb73-13"><a href="#cb73-13" aria-hidden="true" tabindex="-1"></a><span class="fu">par</span>(<span class="at">mar =</span> <span class="fu">c</span>(<span class="dv">5</span>, <span class="dv">4</span>, <span class="dv">6</span>, <span class="dv">2</span>))  <span class="co"># bottom, left, top, right</span></span>
+<span id="cb73-14"><a href="#cb73-14" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb73-15"><a href="#cb73-15" aria-hidden="true" tabindex="-1"></a><span class="co">#add world map outline on top</span></span>
+<span id="cb73-16"><a href="#cb73-16" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(wrld_simpl, <span class="at">add =</span> <span class="cn">TRUE</span>, <span class="at">border =</span> <span class="st">"dark grey"</span>)</span>
+<span id="cb73-17"><a href="#cb73-17" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb73-18"><a href="#cb73-18" aria-hidden="true" tabindex="-1"></a><span class="co">#add legend </span></span>
+<span id="cb73-19"><a href="#cb73-19" aria-hidden="true" tabindex="-1"></a><span class="fu">legend</span>(<span class="at">x=</span><span class="sc">-</span><span class="dv">20</span>, <span class="at">y=</span><span class="sc">-</span><span class="dv">10</span>, </span>
+<span id="cb73-20"><a href="#cb73-20" aria-hidden="true" tabindex="-1"></a>       <span class="at">legend =</span> <span class="fu">c</span>(<span class="st">"No Presence"</span>, <span class="st">"One Species Present"</span>, <span class="st">"Overlap (Both Present)"</span>), </span>
+<span id="cb73-21"><a href="#cb73-21" aria-hidden="true" tabindex="-1"></a>       <span class="at">fill =</span> <span class="fu">c</span>(<span class="st">"white"</span>, <span class="st">"orange"</span>, <span class="st">"darkgreen"</span>), </span>
+<span id="cb73-22"><a href="#cb73-22" aria-hidden="true" tabindex="-1"></a>       <span class="at">border =</span> <span class="st">"black"</span>, </span>
+<span id="cb73-23"><a href="#cb73-23" aria-hidden="true" tabindex="-1"></a>       <span class="at">bty =</span> <span class="st">"n"</span>,</span>
+<span id="cb73-24"><a href="#cb73-24" aria-hidden="true" tabindex="-1"></a>       <span class="at">cex =</span> <span class="fl">0.6</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="spatialdistributionassignment3_files/figure-html/unnamed-chunk-47-1.png" class="img-fluid figure-img" width="768"></p>
+</figure>
+</div>
+</div>
+</div>
+<p>This plot was generated by applying a buffer to the lion and zebra binary rasters and then overlaying them. The visualisation of the overlap seems appropriate. Orange indicates presence of one of the species and based on the earlier plots of lion distribution, it likely is referring to the presence of lions. Where the plot shows dark green (overlap) seem correct based on the previous individual plots of where lions and zebras are present.</p>
+<p>Now I will use Jaccard index as an overlap metric. I chose Jaccard to focus on potential real-world range overlap, allowing for ecological interactions in adjacent habitats. Jaccard is also a widely used measure of spatial overlap (Kei, 2021) and thus seems appropriate in this context.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb74"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb74-1"><a href="#cb74-1" aria-hidden="true" tabindex="-1"></a><span class="co">#extract the raster values as a vector</span></span>
+<span id="cb74-2"><a href="#cb74-2" aria-hidden="true" tabindex="-1"></a>vals <span class="ot">&lt;-</span> <span class="fu">values</span>(overlap_raster)</span>
+<span id="cb74-3"><a href="#cb74-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb74-4"><a href="#cb74-4" aria-hidden="true" tabindex="-1"></a><span class="co">#count overlap to create both present object and either present object</span></span>
+<span id="cb74-5"><a href="#cb74-5" aria-hidden="true" tabindex="-1"></a>both_present <span class="ot">&lt;-</span> <span class="fu">sum</span>(vals <span class="sc">==</span> <span class="dv">2</span>, <span class="at">na.rm =</span> <span class="cn">TRUE</span>)      </span>
+<span id="cb74-6"><a href="#cb74-6" aria-hidden="true" tabindex="-1"></a>either_present <span class="ot">&lt;-</span> <span class="fu">sum</span>(vals <span class="sc">%in%</span> <span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">2</span>), <span class="at">na.rm =</span> <span class="cn">TRUE</span>)</span>
+<span id="cb74-7"><a href="#cb74-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb74-8"><a href="#cb74-8" aria-hidden="true" tabindex="-1"></a><span class="co">#calculate the Jaccard Index</span></span>
+<span id="cb74-9"><a href="#cb74-9" aria-hidden="true" tabindex="-1"></a>jaccard_index <span class="ot">&lt;-</span> both_present <span class="sc">/</span> either_present</span>
+<span id="cb74-10"><a href="#cb74-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb74-11"><a href="#cb74-11" aria-hidden="true" tabindex="-1"></a><span class="co">#print result</span></span>
+<span id="cb74-12"><a href="#cb74-12" aria-hidden="true" tabindex="-1"></a><span class="fu">cat</span>(<span class="st">"Jaccard Index (degree of overlap):"</span>, <span class="fu">round</span>(jaccard_index, <span class="dv">3</span>), <span class="st">"</span><span class="sc">\n</span><span class="st">"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Jaccard Index (degree of overlap): 0.501 </code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb76"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb76-1"><a href="#cb76-1" aria-hidden="true" tabindex="-1"></a><span class="fu">cat</span>(<span class="st">"Percent Overlap:"</span>, <span class="fu">round</span>(jaccard_index <span class="sc">*</span> <span class="dv">100</span>, <span class="dv">1</span>), <span class="st">"%</span><span class="sc">\n</span><span class="st">"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Percent Overlap: 50.1 %</code></pre>
+</div>
+</div>
+<p>The code uses the Jaccard metric as a measure of lion and zebra distribution overlap. Each raster cell is a location where the presence of a species is recorded either present or absent. Each raster cell possesses a value; 2 means both species are present (1+1), 1 means one species is present and 0 means neither species are present. The code extracts the raster values as a vector and counts how many cells have a value of 2 and how many cells have a value of either 1 or 2. Jaccard is then calculated as a ratio of the overlap (both species present) to when either species are present. It is then multiplied by 100 to present a percentage overlap. In this case, we can see that the predicted lion and zebra overlap under current climate conditions is 50.1%.</p>
+</section>
+<section id="q4-inter-species-distribution-dependence" class="level3">
+<h3 class="anchored" data-anchor-id="q4-inter-species-distribution-dependence"><strong>Q4: Inter-species Distribution Dependence</strong></h3>
+<p><strong>Use a linear model to test whether the distribution of species 1 at the present time depends on the distribution of species 2, while also taking account of the effects of climatic variables.</strong></p>
+<p>The modeled presence/absence data for lions is currently in a binary raster format and the modeled presence/absence distribution for zebras is also in a binary raster format. As such, before I put these two variables into a new GLM, I need to extract the presence/absence data points from the binary rasters. This is because GLMs only take tabular data, but raster layers are spatial grids which can’t be directly inputted into a GLM.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb78"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb78-1"><a href="#cb78-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(terra)</span>
+<span id="cb78-2"><a href="#cb78-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb78-3"><a href="#cb78-3" aria-hidden="true" tabindex="-1"></a><span class="co">#check the lion and zebra rasters have the same resolution and extent. The output shows they have the same resolution but not extent. binary_raster has a larger extent.</span></span>
+<span id="cb78-4"><a href="#cb78-4" aria-hidden="true" tabindex="-1"></a><span class="co">#The extent needs to be the same in order to stack the two rasters before I extract that data as a dataframe.</span></span>
+<span id="cb78-5"><a href="#cb78-5" aria-hidden="true" tabindex="-1"></a><span class="fu">ext</span>(binary_raster)</span>
+<span id="cb78-6"><a href="#cb78-6" aria-hidden="true" tabindex="-1"></a><span class="fu">ext</span>(binary_raster1)</span>
+<span id="cb78-7"><a href="#cb78-7" aria-hidden="true" tabindex="-1"></a><span class="fu">res</span>(binary_raster)</span>
+<span id="cb78-8"><a href="#cb78-8" aria-hidden="true" tabindex="-1"></a><span class="fu">res</span>(binary_raster1)</span>
+<span id="cb78-9"><a href="#cb78-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb78-10"><a href="#cb78-10" aria-hidden="true" tabindex="-1"></a><span class="co">#Resampling binary_raster1 (the smaller raster, also the zebra raster) to binary_raster (the larger raster, also the lion raster). This preserves the broader geographic area. </span></span>
+<span id="cb78-11"><a href="#cb78-11" aria-hidden="true" tabindex="-1"></a>binary_raster1_resampled <span class="ot">&lt;-</span> <span class="fu">resample</span>(binary_raster1, binary_raster, <span class="at">method =</span> <span class="st">"near"</span>)</span>
+<span id="cb78-12"><a href="#cb78-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb78-13"><a href="#cb78-13" aria-hidden="true" tabindex="-1"></a><span class="co">#checking to make sure the extents now match (the output indicates that they do).</span></span>
+<span id="cb78-14"><a href="#cb78-14" aria-hidden="true" tabindex="-1"></a><span class="fu">ext</span>(binary_raster) </span>
+<span id="cb78-15"><a href="#cb78-15" aria-hidden="true" tabindex="-1"></a><span class="fu">ext</span>(binary_raster1_resampled)</span>
+<span id="cb78-16"><a href="#cb78-16" aria-hidden="true" tabindex="-1"></a><span class="fu">res</span>(binary_raster)</span>
+<span id="cb78-17"><a href="#cb78-17" aria-hidden="true" tabindex="-1"></a><span class="fu">res</span>(binary_raster1_resampled)</span>
+<span id="cb78-18"><a href="#cb78-18" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb78-19"><a href="#cb78-19" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb78-20"><a href="#cb78-20" aria-hidden="true" tabindex="-1"></a><span class="co">#stack the lion raster and the zebra raster into an object called raster_stack (stacking to maintain spatial alignment)</span></span>
+<span id="cb78-21"><a href="#cb78-21" aria-hidden="true" tabindex="-1"></a>raster_stack <span class="ot">&lt;-</span> <span class="fu">c</span>(binary_raster, binary_raster1_resampled)</span>
+<span id="cb78-22"><a href="#cb78-22" aria-hidden="true" tabindex="-1"></a><span class="fu">names</span>(raster_stack) <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">"binary_raster_converted"</span>, <span class="st">"binary_raster1_converted"</span>)</span>
+<span id="cb78-23"><a href="#cb78-23" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb78-24"><a href="#cb78-24" aria-hidden="true" tabindex="-1"></a><span class="co">#convert the stacked rasters to a dataframe which I can input into my glm</span></span>
+<span id="cb78-25"><a href="#cb78-25" aria-hidden="true" tabindex="-1"></a>glm_data <span class="ot">&lt;-</span> <span class="fu">as.data.frame</span>(raster_stack, <span class="at">xy =</span> <span class="cn">TRUE</span>)</span>
+<span id="cb78-26"><a href="#cb78-26" aria-hidden="true" tabindex="-1"></a><span class="fu">colnames</span>(glm_data)[<span class="dv">3</span><span class="sc">:</span><span class="dv">4</span>] <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">"lion_presence_converted"</span>, <span class="st">"zebra_presence_converted"</span>)</span>
+<span id="cb78-27"><a href="#cb78-27" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb78-28"><a href="#cb78-28" aria-hidden="true" tabindex="-1"></a><span class="co">#check the glm_data. I noticed that when the raster data converted to a dataframe the values accidentally converted to logical TRUE/FALSE instead of numeric 1/0.</span></span>
+<span id="cb78-29"><a href="#cb78-29" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(glm_data)</span>
+<span id="cb78-30"><a href="#cb78-30" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb78-31"><a href="#cb78-31" aria-hidden="true" tabindex="-1"></a><span class="co">#convert the logical TRUE/FALSE back to numeric 1/0</span></span>
+<span id="cb78-32"><a href="#cb78-32" aria-hidden="true" tabindex="-1"></a>glm_data<span class="sc">$</span>lion_presence_converted <span class="ot">&lt;-</span> <span class="fu">as.numeric</span>(glm_data<span class="sc">$</span>lion_presence_converted)</span>
+<span id="cb78-33"><a href="#cb78-33" aria-hidden="true" tabindex="-1"></a>glm_data<span class="sc">$</span>zebra_presence_converted <span class="ot">&lt;-</span> <span class="fu">as.numeric</span>(glm_data<span class="sc">$</span>zebra_presence_converted)</span>
+<span id="cb78-34"><a href="#cb78-34" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb78-35"><a href="#cb78-35" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb78-36"><a href="#cb78-36" aria-hidden="true" tabindex="-1"></a><span class="co">#the dataframe contains NAs. To handle these, I will fill in the missing presence/absence values with 0, assuming that no data at a location indicates species absence (consistent with our earlier approach). </span></span>
+<span id="cb78-37"><a href="#cb78-37" aria-hidden="true" tabindex="-1"></a>glm_data<span class="sc">$</span>lion_presence_converted[<span class="fu">is.na</span>(glm_data<span class="sc">$</span>lion_presence_converted)] <span class="ot">&lt;-</span> <span class="dv">0</span></span>
+<span id="cb78-38"><a href="#cb78-38" aria-hidden="true" tabindex="-1"></a>glm_data<span class="sc">$</span>zebra_presence_converted[<span class="fu">is.na</span>(glm_data<span class="sc">$</span>zebra_presence_converted)] <span class="ot">&lt;-</span> <span class="dv">0</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb79"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb79-1"><a href="#cb79-1" aria-hidden="true" tabindex="-1"></a>glm_model <span class="ot">&lt;-</span> <span class="fu">glm</span>(lion_presence_converted <span class="sc">~</span> zebra_presence_converted, </span>
+<span id="cb79-2"><a href="#cb79-2" aria-hidden="true" tabindex="-1"></a>                 <span class="at">data =</span> glm_data, </span>
+<span id="cb79-3"><a href="#cb79-3" aria-hidden="true" tabindex="-1"></a>                 <span class="at">family =</span> <span class="fu">binomial</span>(<span class="at">link =</span> <span class="st">"logit"</span>))</span>
+<span id="cb79-4"><a href="#cb79-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb79-5"><a href="#cb79-5" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(glm_model)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>
+Call:
+glm(formula = lion_presence_converted ~ zebra_presence_converted, 
+    family = binomial(link = "logit"), data = glm_data)
+
+Coefficients:
+                          Estimate Std. Error z value Pr(&gt;|z|)    
+(Intercept)              -1.396732   0.008445  -165.4   &lt;2e-16 ***
+zebra_presence_converted  2.255767   0.016579   136.1   &lt;2e-16 ***
+---
+Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
+
+(Dispersion parameter for binomial family taken to be 1)
+
+    Null deviance: 137278  on 111684  degrees of freedom
+Residual deviance: 116461  on 111683  degrees of freedom
+AIC: 116465
+
+Number of Fisher Scoring iterations: 4</code></pre>
+</div>
+</div>
+<p>The model suggest that the distribution of lions does depend on the distribution of zebras because the predictor variable zebra_presence_converted has a statistically significant p value of &lt;2e-16. This significant positive effect of zebra distribution suggests that lions preferentially occur where zebra’s do which is consistent with their predator-prey relationship. I also note that in this model I haven’t added climate variables to the model because they are already implicitly included since the converted predicted raster data was already modelled accounting for the climate variables.</p>
+</section>
+<section id="q5-future-distribution-prediction" class="level3">
+<h3 class="anchored" data-anchor-id="q5-future-distribution-prediction"><strong>Q5: Future Distribution Prediction</strong></h3>
+<p><strong>Predict the future distribution of each species using CMIP6 data for future climate and predict how the degree of overlap in ranges will change in that time. Do you expect the two species to co-occur more often or less often than at the present?</strong></p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb81"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb81-1"><a href="#cb81-1" aria-hidden="true" tabindex="-1"></a><span class="co">#Downloaded future bio data earlier</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb82"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb82-1"><a href="#cb82-1" aria-hidden="true" tabindex="-1"></a><span class="co">#crops future biodata to extent defined by e</span></span>
+<span id="cb82-2"><a href="#cb82-2" aria-hidden="true" tabindex="-1"></a>future.bio.data <span class="ot">&lt;-</span> <span class="fu">crop</span>(future.bio.data, e)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb83"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb83-1"><a href="#cb83-1" aria-hidden="true" tabindex="-1"></a><span class="co">#making prediction bades on future biodata and gm1</span></span>
+<span id="cb83-2"><a href="#cb83-2" aria-hidden="true" tabindex="-1"></a>future_pg <span class="ot">&lt;-</span> <span class="fu">predict</span>(future.bio.data, gm1, <span class="at">ext =</span> e, <span class="at">type =</span> <span class="st">"response"</span>)</span>
+<span id="cb83-3"><a href="#cb83-3" aria-hidden="true" tabindex="-1"></a>future_pg <span class="ot">&lt;-</span> <span class="fu">crop</span>(future_pg, e)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb84"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb84-1"><a href="#cb84-1" aria-hidden="true" tabindex="-1"></a><span class="co">#Visualising predicted lion distribution based on gm1</span></span>
+<span id="cb84-2"><a href="#cb84-2" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(future_pg, <span class="at">main =</span> <span class="st">"Predicted suitable habitats in future for lions based on gm1"</span>)</span>
+<span id="cb84-3"><a href="#cb84-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Add country boundaries</span></span>
+<span id="cb84-4"><a href="#cb84-4" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(wrld_simpl, <span class="at">add =</span> <span class="cn">TRUE</span>, <span class="at">border =</span> <span class="st">"dark grey"</span>)</span>
+<span id="cb84-5"><a href="#cb84-5" aria-hidden="true" tabindex="-1"></a><span class="co"># Add our observed locality data for lions</span></span>
+<span id="cb84-6"><a href="#cb84-6" aria-hidden="true" tabindex="-1"></a><span class="fu">points</span>(species1.coords.trim, <span class="at">col=</span><span class="st">"red"</span>, <span class="at">pch=</span><span class="dv">20</span>, <span class="at">cex=</span><span class="fl">1.5</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="spatialdistributionassignment3_files/figure-html/unnamed-chunk-54-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+<p>The future continuous probability raster plot shows a lot more purple, particularly in central Africa and the North. These areas originally had more yellow and greenish hues when the present climate data was modelled, indicating that now, they are less suitable habitats. More area has become unsuitable as a habitat (darker blue/purple colours) and less area has become suitable (lighter yellow colours) when considering future climate variables.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb85"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb85-1"><a href="#cb85-1" aria-hidden="true" tabindex="-1"></a><span class="co">#apply threshold calculate previously to convert continuous probability raster to binary presence absence raster</span></span>
+<span id="cb85-2"><a href="#cb85-2" aria-hidden="true" tabindex="-1"></a><span class="co">#plot binary raster map showing presence (true) and absence (false) of lions</span></span>
+<span id="cb85-3"><a href="#cb85-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb85-4"><a href="#cb85-4" aria-hidden="true" tabindex="-1"></a><span class="co">#pg is the continuous probability raster which we convert to binary based upon the threshold</span></span>
+<span id="cb85-5"><a href="#cb85-5" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(future_pg <span class="sc">&gt;</span> tr, </span>
+<span id="cb85-6"><a href="#cb85-6" aria-hidden="true" tabindex="-1"></a>     <span class="at">main =</span> <span class="st">"Predicted FUTURE absence (false) and presence (true) of lions based upon gm1"</span>, </span>
+<span id="cb85-7"><a href="#cb85-7" aria-hidden="true" tabindex="-1"></a>     <span class="at">xlab =</span> <span class="st">"Longitude"</span>, </span>
+<span id="cb85-8"><a href="#cb85-8" aria-hidden="true" tabindex="-1"></a>     <span class="at">ylab =</span> <span class="st">"Latitude"</span>)</span>
+<span id="cb85-9"><a href="#cb85-9" aria-hidden="true" tabindex="-1"></a><span class="co">#Plotting the world map and adding country borders</span></span>
+<span id="cb85-10"><a href="#cb85-10" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(wrld_simpl, <span class="at">add =</span> <span class="cn">TRUE</span>, <span class="at">border =</span> <span class="st">"dark grey"</span>)</span>
+<span id="cb85-11"><a href="#cb85-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb85-12"><a href="#cb85-12" aria-hidden="true" tabindex="-1"></a><span class="co"># Increase the top margin to prevent the title from being cut off</span></span>
+<span id="cb85-13"><a href="#cb85-13" aria-hidden="true" tabindex="-1"></a><span class="fu">par</span>(<span class="at">mar =</span> <span class="fu">c</span>(<span class="dv">5</span>, <span class="dv">4</span>, <span class="dv">6</span>, <span class="dv">2</span>))  <span class="co"># bottom, left, top, right</span></span>
+<span id="cb85-14"><a href="#cb85-14" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb85-15"><a href="#cb85-15" aria-hidden="true" tabindex="-1"></a><span class="co">#Plotting the observed lion occurrences in red</span></span>
+<span id="cb85-16"><a href="#cb85-16" aria-hidden="true" tabindex="-1"></a><span class="fu">points</span>(species1.coords.trim, <span class="at">col =</span> <span class="st">"red"</span>, <span class="at">pch =</span> <span class="dv">20</span>, <span class="at">cex =</span> <span class="fl">0.8</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="spatialdistributionassignment3_files/figure-html/unnamed-chunk-55-1.png" class="img-fluid figure-img" width="768"></p>
+</figure>
+</div>
+</div>
+</div>
+<p>This plot shows that under future climate variables, the yellow region decreases, particularly in South Africa. This indicates that the model predicts lions are becoming absent in these regions (because the habitat is becoming unsuitable).</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb86"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb86-1"><a href="#cb86-1" aria-hidden="true" tabindex="-1"></a><span class="co">#Applying a buffer to the future distribution visualisation</span></span>
+<span id="cb86-2"><a href="#cb86-2" aria-hidden="true" tabindex="-1"></a><span class="co">#convert binary raster from a RasterLayer to spat raster because I want to apply a buffer using terra() but terra::buffer() function won’t accept a RasterLayer.</span></span>
+<span id="cb86-3"><a href="#cb86-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb86-4"><a href="#cb86-4" aria-hidden="true" tabindex="-1"></a><span class="co">#convert thresholded raster properly into numeric (0/1) with ifel()</span></span>
+<span id="cb86-5"><a href="#cb86-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb86-6"><a href="#cb86-6" aria-hidden="true" tabindex="-1"></a>future_lion_binary_spat  <span class="ot">&lt;-</span> <span class="fu">ifel</span>(future_pg <span class="sc">&gt;</span> tr, <span class="dv">1</span>, <span class="dv">0</span>)</span>
+<span id="cb86-7"><a href="#cb86-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb86-8"><a href="#cb86-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb86-9"><a href="#cb86-9" aria-hidden="true" tabindex="-1"></a><span class="co">#check raster resolution  so that when I make the buffer 0.5 degrees, I know how many pixels that distance represents and can specify the buffer accordingly.</span></span>
+<span id="cb86-10"><a href="#cb86-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb86-11"><a href="#cb86-11" aria-hidden="true" tabindex="-1"></a><span class="fu">res</span>(future_lion_binary_spat)</span>
+<span id="cb86-12"><a href="#cb86-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb86-13"><a href="#cb86-13" aria-hidden="true" tabindex="-1"></a><span class="co">#calculate number of pixels corresponding to 0.5 degrees</span></span>
+<span id="cb86-14"><a href="#cb86-14" aria-hidden="true" tabindex="-1"></a>pixel_size <span class="ot">&lt;-</span> <span class="fu">res</span>(future_lion_binary_spat)[<span class="dv">1</span>] </span>
+<span id="cb86-15"><a href="#cb86-15" aria-hidden="true" tabindex="-1"></a>buffer_deg <span class="ot">&lt;-</span> <span class="fl">0.5</span></span>
+<span id="cb86-16"><a href="#cb86-16" aria-hidden="true" tabindex="-1"></a>buffer_pixels <span class="ot">&lt;-</span> <span class="fu">round</span>(buffer_deg <span class="sc">/</span> pixel_size)</span>
+<span id="cb86-17"><a href="#cb86-17" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb86-18"><a href="#cb86-18" aria-hidden="true" tabindex="-1"></a><span class="co">#creates a square matrix that will be used as a weight matrix for the focal function: (square of (2*buffer_pixels + 1))</span></span>
+<span id="cb86-19"><a href="#cb86-19" aria-hidden="true" tabindex="-1"></a>w_future <span class="ot">&lt;-</span> <span class="fu">matrix</span>(<span class="dv">1</span>, <span class="at">nrow =</span> (<span class="dv">2</span> <span class="sc">*</span> buffer_pixels <span class="sc">+</span> <span class="dv">1</span>), <span class="at">ncol =</span> (<span class="dv">2</span> <span class="sc">*</span> buffer_pixels <span class="sc">+</span> <span class="dv">1</span>))</span>
+<span id="cb86-20"><a href="#cb86-20" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb86-21"><a href="#cb86-21" aria-hidden="true" tabindex="-1"></a><span class="co">#apply the focal function to the raster layers to expand (buffer) the presence pixels</span></span>
+<span id="cb86-22"><a href="#cb86-22" aria-hidden="true" tabindex="-1"></a>future_lion_buffer <span class="ot">&lt;-</span> <span class="fu">focal</span>(future_lion_binary_spat, <span class="at">w =</span> w_future, <span class="at">fun =</span> max, <span class="at">na.policy =</span> <span class="st">'omit'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb87"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb87-1"><a href="#cb87-1" aria-hidden="true" tabindex="-1"></a><span class="co">#visualise future distribution of lions with buffer applied</span></span>
+<span id="cb87-2"><a href="#cb87-2" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(future_lion_buffer, </span>
+<span id="cb87-3"><a href="#cb87-3" aria-hidden="true" tabindex="-1"></a>     <span class="at">main =</span> <span class="st">"Buffered FUTURE Lion Presence (1=true) (0.5°), "</span>, </span>
+<span id="cb87-4"><a href="#cb87-4" aria-hidden="true" tabindex="-1"></a>     <span class="at">col =</span> <span class="fu">c</span>(<span class="st">"purple"</span>, <span class="st">"yellow"</span>), </span>
+<span id="cb87-5"><a href="#cb87-5" aria-hidden="true" tabindex="-1"></a>     <span class="at">xlab =</span> <span class="st">"Longitude"</span>, </span>
+<span id="cb87-6"><a href="#cb87-6" aria-hidden="true" tabindex="-1"></a>     <span class="at">ylab =</span> <span class="st">"Latitude"</span>,</span>
+<span id="cb87-7"><a href="#cb87-7" aria-hidden="true" tabindex="-1"></a>     <span class="at">legend =</span> <span class="cn">TRUE</span>)</span>
+<span id="cb87-8"><a href="#cb87-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb87-9"><a href="#cb87-9" aria-hidden="true" tabindex="-1"></a><span class="co"># Add world map</span></span>
+<span id="cb87-10"><a href="#cb87-10" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(wrld_simpl, <span class="at">add =</span> <span class="cn">TRUE</span>, <span class="at">border =</span> <span class="st">"dark grey"</span>)</span>
+<span id="cb87-11"><a href="#cb87-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb87-12"><a href="#cb87-12" aria-hidden="true" tabindex="-1"></a><span class="co">#Add observed lion occurrences in red</span></span>
+<span id="cb87-13"><a href="#cb87-13" aria-hidden="true" tabindex="-1"></a><span class="fu">points</span>(species1.coords.trim, <span class="at">col =</span> <span class="st">"red"</span>, <span class="at">pch =</span> <span class="dv">20</span>, <span class="at">cex =</span> <span class="fl">0.8</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="spatialdistributionassignment3_files/figure-html/unnamed-chunk-57-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+<p>The plot shows the predicted future distribution of lions with the buffer applied, and indicates that lion absence is increasing. This is because there are more purple regions, particularly in South Africa, which indicate lion absence. When we look closely we can also see that the purple region in central Africa has expanded slightly in the future model. Similarly, the three circular-like yellow regions situated in a line in the North of Africa appear to have shrunk slightly, indicating lion presence is predicted to decrease in these regions.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb88"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb88-1"><a href="#cb88-1" aria-hidden="true" tabindex="-1"></a><span class="co">#repeating the above code for zebras</span></span>
+<span id="cb88-2"><a href="#cb88-2" aria-hidden="true" tabindex="-1"></a>future_pg1 <span class="ot">&lt;-</span> <span class="fu">predict</span>(future.bio.data, gm2_test1, <span class="at">ext =</span> e1, <span class="at">type =</span> <span class="st">"response"</span>)</span>
+<span id="cb88-3"><a href="#cb88-3" aria-hidden="true" tabindex="-1"></a>future_pg1 <span class="ot">&lt;-</span> <span class="fu">crop</span>(future_pg1, e1)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb89"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb89-1"><a href="#cb89-1" aria-hidden="true" tabindex="-1"></a><span class="co">#Visualising predicted zebra distribution based on gm2_test1</span></span>
+<span id="cb89-2"><a href="#cb89-2" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(future_pg1, <span class="at">main =</span> <span class="st">"Predicted suitable habitats in future for zebras based on gm2_test1"</span>) </span>
+<span id="cb89-3"><a href="#cb89-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Add country boundaries</span></span>
+<span id="cb89-4"><a href="#cb89-4" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(wrld_simpl, <span class="at">add =</span> <span class="cn">TRUE</span>, <span class="at">border =</span> <span class="st">"dark grey"</span>)</span>
+<span id="cb89-5"><a href="#cb89-5" aria-hidden="true" tabindex="-1"></a><span class="co"># Add our observed locality data for zebras</span></span>
+<span id="cb89-6"><a href="#cb89-6" aria-hidden="true" tabindex="-1"></a><span class="fu">points</span>(species2.coords.trim, <span class="at">col=</span><span class="st">"cyan"</span>, <span class="at">pch=</span><span class="dv">20</span>, <span class="at">cex=</span><span class="fl">0.8</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="spatialdistributionassignment3_files/figure-html/unnamed-chunk-59-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+<p>The plot above was generated by using the model created earlier and the future climate data. The visualisation suggests that changing future climate conditions are predicted to impact zebra distribution such that a larger region of Africa, particularly the North and West, will become less suitable habitats (indicated by purple colour). The plot drastically compares to the present climate data model of distribution where the purple region was much smaller and instead indicated more areas of habitat suitability. Additionally, the yellow region in this plot (South Africa) appears to have shrunk, indicating areas that were previously suitable habitats are now no longer suitable.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb90"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb90-1"><a href="#cb90-1" aria-hidden="true" tabindex="-1"></a><span class="co">#apply threshold calculated previously to convert continuous probability raster to binary presence absence raster</span></span>
+<span id="cb90-2"><a href="#cb90-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb90-3"><a href="#cb90-3" aria-hidden="true" tabindex="-1"></a><span class="co">#plot binary raster map showing presence (true) and absence (false) of lions</span></span>
+<span id="cb90-4"><a href="#cb90-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb90-5"><a href="#cb90-5" aria-hidden="true" tabindex="-1"></a><span class="co">#pg is the continuous probability raster which we convert to binary based upon the threshold</span></span>
+<span id="cb90-6"><a href="#cb90-6" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(future_pg1 <span class="sc">&gt;</span> tr1, </span>
+<span id="cb90-7"><a href="#cb90-7" aria-hidden="true" tabindex="-1"></a>     <span class="at">main =</span> <span class="st">"Predicted FUTURE absence (F) and presence (T) of zebras based upon gm2_test1"</span>, </span>
+<span id="cb90-8"><a href="#cb90-8" aria-hidden="true" tabindex="-1"></a>     <span class="at">xlab =</span> <span class="st">"Longitude"</span>, </span>
+<span id="cb90-9"><a href="#cb90-9" aria-hidden="true" tabindex="-1"></a>     <span class="at">ylab =</span> <span class="st">"Latitude"</span>)</span>
+<span id="cb90-10"><a href="#cb90-10" aria-hidden="true" tabindex="-1"></a><span class="co">#Plotting the world map and adding country borders</span></span>
+<span id="cb90-11"><a href="#cb90-11" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(wrld_simpl, <span class="at">add =</span> <span class="cn">TRUE</span>, <span class="at">border =</span> <span class="st">"dark grey"</span>)</span>
+<span id="cb90-12"><a href="#cb90-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb90-13"><a href="#cb90-13" aria-hidden="true" tabindex="-1"></a><span class="co">#Increase the top margin so title isn't cut off</span></span>
+<span id="cb90-14"><a href="#cb90-14" aria-hidden="true" tabindex="-1"></a><span class="fu">par</span>(<span class="at">mar =</span> <span class="fu">c</span>(<span class="dv">5</span>, <span class="dv">4</span>, <span class="dv">6</span>, <span class="dv">2</span>))  </span>
+<span id="cb90-15"><a href="#cb90-15" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb90-16"><a href="#cb90-16" aria-hidden="true" tabindex="-1"></a><span class="co">#Plotting the observed zebra occurrences in cyan</span></span>
+<span id="cb90-17"><a href="#cb90-17" aria-hidden="true" tabindex="-1"></a><span class="fu">points</span>(species2.coords.trim, <span class="at">col =</span> <span class="st">"cyan"</span>, <span class="at">pch =</span> <span class="dv">20</span>, <span class="at">cex =</span> <span class="fl">0.8</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="spatialdistributionassignment3_files/figure-html/unnamed-chunk-60-1.png" class="img-fluid figure-img" width="768"></p>
+</figure>
+</div>
+</div>
+</div>
+<p>This plot was generated by converting the zebra continuous probability raster to a binary presence absence raster using a threshold. Zebra distribution was then plotted according to predicted climate data. The visualisation shows a significant decrease in the yellow regions, particularly in South Africa. This indicates that these areas that previously predicted zebras to be present under present climate conditions are now predicting their absence under future climate conditions. The overall amount of purple has increased suggesting a larger proportion of Africa now has zebras absent.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb91"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb91-1"><a href="#cb91-1" aria-hidden="true" tabindex="-1"></a><span class="co">#convert binary raster from a RasterLayer to spat raster because I want to apply a buffer using terra() but terra::buffer() function won’t accept a RasterLayer.</span></span>
+<span id="cb91-2"><a href="#cb91-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb91-3"><a href="#cb91-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Convert thresholded raster properly into numeric (0/1) with terra's ifel()</span></span>
+<span id="cb91-4"><a href="#cb91-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb91-5"><a href="#cb91-5" aria-hidden="true" tabindex="-1"></a>future_zebra_binary_spat  <span class="ot">&lt;-</span> <span class="fu">ifel</span>(future_pg1 <span class="sc">&gt;</span> tr1, <span class="dv">1</span>, <span class="dv">0</span>)</span>
+<span id="cb91-6"><a href="#cb91-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb91-7"><a href="#cb91-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb91-8"><a href="#cb91-8" aria-hidden="true" tabindex="-1"></a><span class="co">#check raster resolution  so that when I make the buffer 0.5 degrees, I know how many pixels that distance represents and can specify the buffer accordingly.</span></span>
+<span id="cb91-9"><a href="#cb91-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb91-10"><a href="#cb91-10" aria-hidden="true" tabindex="-1"></a><span class="fu">res</span>(future_zebra_binary_spat)</span>
+<span id="cb91-11"><a href="#cb91-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb91-12"><a href="#cb91-12" aria-hidden="true" tabindex="-1"></a><span class="co"># Calculate how many pixels equal 0.5 degrees</span></span>
+<span id="cb91-13"><a href="#cb91-13" aria-hidden="true" tabindex="-1"></a>pixel_size <span class="ot">&lt;-</span> <span class="fu">res</span>(future_zebra_binary_spat)[<span class="dv">1</span>]  <span class="co"># 0.1666667</span></span>
+<span id="cb91-14"><a href="#cb91-14" aria-hidden="true" tabindex="-1"></a>buffer_deg <span class="ot">&lt;-</span> <span class="fl">0.5</span></span>
+<span id="cb91-15"><a href="#cb91-15" aria-hidden="true" tabindex="-1"></a>buffer_pixels <span class="ot">&lt;-</span> <span class="fu">round</span>(buffer_deg <span class="sc">/</span> pixel_size)  <span class="co"># ~3 pixels</span></span>
+<span id="cb91-16"><a href="#cb91-16" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb91-17"><a href="#cb91-17" aria-hidden="true" tabindex="-1"></a><span class="co">#creates a square matrix that will be used as a weight matrix for the focal function: (square of (2*buffer_pixels + 1))</span></span>
+<span id="cb91-18"><a href="#cb91-18" aria-hidden="true" tabindex="-1"></a>w_future1 <span class="ot">&lt;-</span> <span class="fu">matrix</span>(<span class="dv">1</span>, <span class="at">nrow =</span> (<span class="dv">2</span> <span class="sc">*</span> buffer_pixels <span class="sc">+</span> <span class="dv">1</span>), <span class="at">ncol =</span> (<span class="dv">2</span> <span class="sc">*</span> buffer_pixels <span class="sc">+</span> <span class="dv">1</span>))</span>
+<span id="cb91-19"><a href="#cb91-19" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb91-20"><a href="#cb91-20" aria-hidden="true" tabindex="-1"></a><span class="co">#apply the focal function to the raster layers to expand (buffer) the presence pixels</span></span>
+<span id="cb91-21"><a href="#cb91-21" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb91-22"><a href="#cb91-22" aria-hidden="true" tabindex="-1"></a>future_zebra_buffer <span class="ot">&lt;-</span> <span class="fu">focal</span>(future_zebra_binary_spat, <span class="at">w =</span> w_future1, <span class="at">fun =</span> max, <span class="at">na.policy =</span> <span class="st">'omit'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb92"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb92-1"><a href="#cb92-1" aria-hidden="true" tabindex="-1"></a><span class="co">#visualise future distribution of zebras with buffer applied</span></span>
+<span id="cb92-2"><a href="#cb92-2" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(future_zebra_buffer, </span>
+<span id="cb92-3"><a href="#cb92-3" aria-hidden="true" tabindex="-1"></a>     <span class="at">main =</span> <span class="st">"Buffered FUTURE zebra Presence (true) (0.5°), "</span>, </span>
+<span id="cb92-4"><a href="#cb92-4" aria-hidden="true" tabindex="-1"></a>     <span class="at">col =</span> <span class="fu">c</span>(<span class="st">"purple"</span>, <span class="st">"yellow"</span>), </span>
+<span id="cb92-5"><a href="#cb92-5" aria-hidden="true" tabindex="-1"></a>     <span class="at">xlab =</span> <span class="st">"Longitude"</span>, </span>
+<span id="cb92-6"><a href="#cb92-6" aria-hidden="true" tabindex="-1"></a>     <span class="at">ylab =</span> <span class="st">"Latitude"</span>,</span>
+<span id="cb92-7"><a href="#cb92-7" aria-hidden="true" tabindex="-1"></a>     <span class="at">legend =</span> <span class="cn">TRUE</span>)</span>
+<span id="cb92-8"><a href="#cb92-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb92-9"><a href="#cb92-9" aria-hidden="true" tabindex="-1"></a><span class="co"># Add world map</span></span>
+<span id="cb92-10"><a href="#cb92-10" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(wrld_simpl, <span class="at">add =</span> <span class="cn">TRUE</span>, <span class="at">border =</span> <span class="st">"dark grey"</span>)</span>
+<span id="cb92-11"><a href="#cb92-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb92-12"><a href="#cb92-12" aria-hidden="true" tabindex="-1"></a><span class="co">#Add observed zebra occurrences in cyan</span></span>
+<span id="cb92-13"><a href="#cb92-13" aria-hidden="true" tabindex="-1"></a><span class="fu">points</span>(species2.coords.trim, <span class="at">col =</span> <span class="st">"blue"</span>, <span class="at">pch =</span> <span class="dv">20</span>, <span class="at">cex =</span> <span class="fl">0.8</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="spatialdistributionassignment3_files/figure-html/unnamed-chunk-62-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+<p>The plot shows the predicted future distribution of zebras with the buffer applied, and indicates that zebra absence is increasing. This is shown by the yellow regions in central Africa which appear to have decreased in size. Similarly, South Africa used to be a large yellow region however in this plot a significant proportion of South Africa is purple, indicating liosn are predicted to be absent here under the future climate variables.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb93"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb93-1"><a href="#cb93-1" aria-hidden="true" tabindex="-1"></a><span class="co">#Preparing to overlap the rasters</span></span>
+<span id="cb93-2"><a href="#cb93-2" aria-hidden="true" tabindex="-1"></a><span class="co">#check identical, results show not matching</span></span>
+<span id="cb93-3"><a href="#cb93-3" aria-hidden="true" tabindex="-1"></a><span class="fu">ext</span>(future_zebra_buffer)</span>
+<span id="cb93-4"><a href="#cb93-4" aria-hidden="true" tabindex="-1"></a><span class="fu">ext</span>(future_lion_buffer)</span>
+<span id="cb93-5"><a href="#cb93-5" aria-hidden="true" tabindex="-1"></a><span class="fu">res</span>(future_zebra_buffer)</span>
+<span id="cb93-6"><a href="#cb93-6" aria-hidden="true" tabindex="-1"></a><span class="fu">res</span>(future_lion_buffer)</span>
+<span id="cb93-7"><a href="#cb93-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb93-8"><a href="#cb93-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb93-9"><a href="#cb93-9" aria-hidden="true" tabindex="-1"></a><span class="co">#identify which raster has the bigger extent</span></span>
+<span id="cb93-10"><a href="#cb93-10" aria-hidden="true" tabindex="-1"></a>future_extent <span class="ot">&lt;-</span> <span class="fu">union</span>(<span class="fu">ext</span>(future_lion_buffer), <span class="fu">ext</span>(future_zebra_buffer))</span>
+<span id="cb93-11"><a href="#cb93-11" aria-hidden="true" tabindex="-1"></a>future_extent</span>
+<span id="cb93-12"><a href="#cb93-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb93-13"><a href="#cb93-13" aria-hidden="true" tabindex="-1"></a><span class="co">#zebra extent is smaller so extend it to match lion extent</span></span>
+<span id="cb93-14"><a href="#cb93-14" aria-hidden="true" tabindex="-1"></a><span class="co"># If future_zebra_buffer is smaller, extend it</span></span>
+<span id="cb93-15"><a href="#cb93-15" aria-hidden="true" tabindex="-1"></a>future_zebra_buffer_ext <span class="ot">&lt;-</span> <span class="fu">extend</span>(future_zebra_buffer, future_extent)</span>
+<span id="cb93-16"><a href="#cb93-16" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb93-17"><a href="#cb93-17" aria-hidden="true" tabindex="-1"></a><span class="co">#check extents are identical; they are</span></span>
+<span id="cb93-18"><a href="#cb93-18" aria-hidden="true" tabindex="-1"></a><span class="fu">ext</span>(future_zebra_buffer_ext)</span>
+<span id="cb93-19"><a href="#cb93-19" aria-hidden="true" tabindex="-1"></a><span class="fu">ext</span>(future_lion_buffer)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb94"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb94-1"><a href="#cb94-1" aria-hidden="true" tabindex="-1"></a><span class="co">#Now I can add the two future buffered rasters together</span></span>
+<span id="cb94-2"><a href="#cb94-2" aria-hidden="true" tabindex="-1"></a>future_overlap_raster <span class="ot">&lt;-</span> future_zebra_buffer_ext <span class="sc">+</span> future_lion_buffer</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb95"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb95-1"><a href="#cb95-1" aria-hidden="true" tabindex="-1"></a><span class="co">#Now I can visualise the overlayed rasters to see the overlap before calculating it</span></span>
+<span id="cb95-2"><a href="#cb95-2" aria-hidden="true" tabindex="-1"></a><span class="co">#plot the raster with colouring for the categories</span></span>
+<span id="cb95-3"><a href="#cb95-3" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(future_overlap_raster, </span>
+<span id="cb95-4"><a href="#cb95-4" aria-hidden="true" tabindex="-1"></a>     <span class="at">breaks =</span> <span class="fu">c</span>(<span class="sc">-</span><span class="fl">0.1</span>, <span class="fl">0.5</span>, <span class="fl">1.5</span>, <span class="fl">2.5</span>),  </span>
+<span id="cb95-5"><a href="#cb95-5" aria-hidden="true" tabindex="-1"></a>     <span class="at">col =</span> <span class="fu">c</span>(<span class="st">"white"</span>, <span class="st">"orange"</span>, <span class="st">"darkgreen"</span>), </span>
+<span id="cb95-6"><a href="#cb95-6" aria-hidden="true" tabindex="-1"></a>     <span class="at">main =</span> <span class="st">"The overlap of FUTURE predicted zebra and lion presence with a (0.5° Buffer) applied"</span>, </span>
+<span id="cb95-7"><a href="#cb95-7" aria-hidden="true" tabindex="-1"></a>     <span class="at">xlab =</span> <span class="st">"Longitude"</span>, </span>
+<span id="cb95-8"><a href="#cb95-8" aria-hidden="true" tabindex="-1"></a>     <span class="at">ylab =</span> <span class="st">"Latitude"</span>, </span>
+<span id="cb95-9"><a href="#cb95-9" aria-hidden="true" tabindex="-1"></a>     <span class="at">legend =</span> <span class="cn">FALSE</span>,   <span class="co">#turns off legend</span></span>
+<span id="cb95-10"><a href="#cb95-10" aria-hidden="true" tabindex="-1"></a>     <span class="at">axes =</span> <span class="cn">TRUE</span>)</span>
+<span id="cb95-11"><a href="#cb95-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb95-12"><a href="#cb95-12" aria-hidden="true" tabindex="-1"></a><span class="co">#increase the top margin to so title isn't cut off</span></span>
+<span id="cb95-13"><a href="#cb95-13" aria-hidden="true" tabindex="-1"></a><span class="fu">par</span>(<span class="at">mar =</span> <span class="fu">c</span>(<span class="dv">5</span>, <span class="dv">4</span>, <span class="dv">6</span>, <span class="dv">2</span>))  </span>
+<span id="cb95-14"><a href="#cb95-14" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb95-15"><a href="#cb95-15" aria-hidden="true" tabindex="-1"></a><span class="co">#add world map outline on top</span></span>
+<span id="cb95-16"><a href="#cb95-16" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(wrld_simpl, <span class="at">add =</span> <span class="cn">TRUE</span>, <span class="at">border =</span> <span class="st">"dark grey"</span>)</span>
+<span id="cb95-17"><a href="#cb95-17" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb95-18"><a href="#cb95-18" aria-hidden="true" tabindex="-1"></a><span class="co">#add legend</span></span>
+<span id="cb95-19"><a href="#cb95-19" aria-hidden="true" tabindex="-1"></a><span class="fu">legend</span>(<span class="at">x=</span><span class="sc">-</span><span class="dv">20</span>, <span class="at">y=</span><span class="sc">-</span><span class="dv">10</span>, </span>
+<span id="cb95-20"><a href="#cb95-20" aria-hidden="true" tabindex="-1"></a>       <span class="at">legend =</span> <span class="fu">c</span>(<span class="st">"No Presence"</span>, <span class="st">"One Species Present"</span>, <span class="st">"Overlap (Both Present)"</span>), </span>
+<span id="cb95-21"><a href="#cb95-21" aria-hidden="true" tabindex="-1"></a>       <span class="at">fill =</span> <span class="fu">c</span>(<span class="st">"white"</span>, <span class="st">"orange"</span>, <span class="st">"darkgreen"</span>), </span>
+<span id="cb95-22"><a href="#cb95-22" aria-hidden="true" tabindex="-1"></a>       <span class="at">border =</span> <span class="st">"black"</span>, </span>
+<span id="cb95-23"><a href="#cb95-23" aria-hidden="true" tabindex="-1"></a>       <span class="at">bty =</span> <span class="st">"n"</span>,</span>
+<span id="cb95-24"><a href="#cb95-24" aria-hidden="true" tabindex="-1"></a>       <span class="at">cex =</span> <span class="fl">0.6</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="spatialdistributionassignment3_files/figure-html/unnamed-chunk-65-1.png" class="img-fluid figure-img" width="768"></p>
+</figure>
+</div>
+</div>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb96"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb96-1"><a href="#cb96-1" aria-hidden="true" tabindex="-1"></a><span class="co">#Calculating jaccard measure of overlap</span></span>
+<span id="cb96-2"><a href="#cb96-2" aria-hidden="true" tabindex="-1"></a><span class="co">#extract the values</span></span>
+<span id="cb96-3"><a href="#cb96-3" aria-hidden="true" tabindex="-1"></a>future_vals <span class="ot">&lt;-</span> <span class="fu">values</span>(future_overlap_raster)</span>
+<span id="cb96-4"><a href="#cb96-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb96-5"><a href="#cb96-5" aria-hidden="true" tabindex="-1"></a><span class="co">#count where both species are present</span></span>
+<span id="cb96-6"><a href="#cb96-6" aria-hidden="true" tabindex="-1"></a>future_both_present <span class="ot">&lt;-</span> <span class="fu">sum</span>(future_vals <span class="sc">==</span> <span class="dv">2</span>, <span class="at">na.rm =</span> <span class="cn">TRUE</span>)</span>
+<span id="cb96-7"><a href="#cb96-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb96-8"><a href="#cb96-8" aria-hidden="true" tabindex="-1"></a><span class="co">#count where either species is present</span></span>
+<span id="cb96-9"><a href="#cb96-9" aria-hidden="true" tabindex="-1"></a>future_either_present <span class="ot">&lt;-</span> <span class="fu">sum</span>(future_vals <span class="sc">%in%</span> <span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">2</span>), <span class="at">na.rm =</span> <span class="cn">TRUE</span>)</span>
+<span id="cb96-10"><a href="#cb96-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb96-11"><a href="#cb96-11" aria-hidden="true" tabindex="-1"></a><span class="co">#calculate Jaccard Index for this future distribution projection</span></span>
+<span id="cb96-12"><a href="#cb96-12" aria-hidden="true" tabindex="-1"></a>future_jaccard <span class="ot">&lt;-</span> future_both_present <span class="sc">/</span> future_either_present</span>
+<span id="cb96-13"><a href="#cb96-13" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb96-14"><a href="#cb96-14" aria-hidden="true" tabindex="-1"></a><span class="co">#prints the results</span></span>
+<span id="cb96-15"><a href="#cb96-15" aria-hidden="true" tabindex="-1"></a><span class="fu">cat</span>(<span class="st">"Future Jaccard Index (degree of overlap):"</span>, <span class="fu">round</span>(future_jaccard, <span class="dv">3</span>), <span class="st">"</span><span class="sc">\n</span><span class="st">"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Future Jaccard Index (degree of overlap): 0.245 </code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb98"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb98-1"><a href="#cb98-1" aria-hidden="true" tabindex="-1"></a><span class="fu">cat</span>(<span class="st">"Future Percent Overlap:"</span>, <span class="fu">round</span>(future_jaccard <span class="sc">*</span> <span class="dv">100</span>, <span class="dv">1</span>), <span class="st">"%</span><span class="sc">\n</span><span class="st">"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Future Percent Overlap: 24.5 %</code></pre>
+</div>
+</div>
+<p>The code in Q5 predicts future distributions of <em>Panthera leo</em> and <em>Equus quagga</em> using CMIP6 climate data (2061–2080) under SSP245. The code first generates maps that indicate future habitat suitability, converts continuous probability ratser predictions to binary presence/absence rasters, and applies spatial buffers.The spatial buffers, as previously mentioned, are to account for the fact that lions and zebras move. This overlap analysis of the predicted future distributions indicates that both species’ future ranges shrink due to reduced suitable habitat. Buffered rasters are aligned, combined, and overlap is visualised. The Jaccard Index then quantifies future co-occurrence, showing a decrease in overlap (from 50.1% to 24.5%). This suggests lions and zebras are predicted to co-occur less often under future climate conditions. This highlights that the range of lions and zebras is shifting due to climate change, the species are responding differently to these new environmental pressures, and we may even observe trophic decoupling in the future where predator-prey interactions decrease.</p>
+</section>
+</section>
+<section id="conclusion" class="level2">
+<h2 class="anchored" data-anchor-id="conclusion">Conclusion</h2>
+<p>This analysis has assessed the changing spatial distribution of lions and plains zebras under present and future climate conditions as well as exploring how much these species are expected to co-occur in the future. We have found that many areas are expected to become less suitable for lions and zebras, and as a result they are predicted to co-occur less often. This spatial modelling is also crucial to inform conservation strategies and mitigate the negative impacts of a changing climate. For example, these models can identify regions of ‘climate change refugia’ which are projected to retain some habitat suitability, and as such conservation efforts can focus on prioritising protection of these areas. Models can also enable conservationists to better understand predator-prey dynamics and whether these relationships are likely to remain stable or disrupted. Furthermore, projections of future distributions can help to identify if lions and zebras are expected to encroach onto human landscapes. This can inform efforts for community engagement and education about preserving these species that can in turn help to mitigate human-wildlife contact. Additionally, if certain areas are predicted to remain suitable, this may inform land-use policies such that these regions remain protected. Ultimately, the future habitat suitability for lions and zebras appears bleak, and spatial modelling analysis is therefore critical for informing conservation strategies and protecting these species in the face of a drastically changing climate.</p>
+</section>
+<section id="references" class="level2">
+<h2 class="anchored" data-anchor-id="references">References</h2>
+<p>Nature and Natural Resources. Retrieved from https://dx.doi.org/10.2305/IUCN.UK.2023- Keil, P. (2021). Measurement and analysis of interspecific spatial associations as a facet of biodiversity. Ecological Monographs, 91(3).</p>
+<p>King. (2016). Equus quagga. The IUCN Red List of Threatened Species. International Union for Conservation of Nature and Natural Resources. Retrieved from http://dx.doi.org/10.2305/IUCN.UK.2016-</p>
+<p>Klingel, H. (1969). The Social Organisation and Population Ecology of the Plains Zebra (Equus Quagga). Zoologica Africana, 4(2), 249-263.</p>
+<p>Nams, V. O. (2023). Spatial patterns of large African cats: a large-scale study on density, home range size, and home range overlap of lions Panthera leo and leopards Panthera pardus. Mammal Review, 53(2), 49-64.</p>
+<p>Image taken from: https://www.naturepl.com/stock-photo-lioness-panthera-leo-suffocating-zebra-equus-quagga-prey-masai-mara-nature-image01488682.html (date accessed; 20/03/2025)</p>
+</section>
+
+</main>
+<!-- /main column -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const isCodeAnnotation = (el) => {
+    for (const clz of el.classList) {
+      if (clz.startsWith('code-annotation-')) {                     
+        return true;
+      }
+    }
+    return false;
+  }
+  const onCopySuccess = function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copied!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  }
+  const getTextToCopy = function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+    text: getTextToCopy
+  });
+  clipboard.on('success', onCopySuccess);
+  if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+    // For code content inside modals, clipBoardJS needs to be initialized with a container option
+    // TODO: Check when it could be a function (https://github.com/zenorocha/clipboard.js/issues/860)
+    const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+      text: getTextToCopy,
+      container: window.document.getElementById('quarto-embedded-source-code-modal')
+    });
+    clipboardModal.on('success', onCopySuccess);
+  }
+    var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+    var mailtoRegex = new RegExp(/^mailto:/);
+      var filterRegex = new RegExp('/' + window.location.host + '/');
+    var isInternal = (href) => {
+        return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+    }
+    // Inspect non-navigation links and adorn them if external
+ 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+    for (var i=0; i<links.length; i++) {
+      const link = links[i];
+      if (!isInternal(link.href)) {
+        // undo the damage that might have been done by quarto-nav.js in the case of
+        // links that we want to consider external
+        if (link.dataset.originalHref !== undefined) {
+          link.href = link.dataset.originalHref;
+        }
+      }
+    }
+  function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+    const config = {
+      allowHTML: true,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start',
+    };
+    if (contentFn) {
+      config.content = contentFn;
+    }
+    if (onTriggerFn) {
+      config.onTrigger = onTriggerFn;
+    }
+    if (onUntriggerFn) {
+      config.onUntrigger = onUntriggerFn;
+    }
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      if (note) {
+        return note.innerHTML;
+      } else {
+        return "";
+      }
+    });
+  }
+  const xrefs = window.document.querySelectorAll('a.quarto-xref');
+  const processXRef = (id, note) => {
+    // Strip column container classes
+    const stripColumnClz = (el) => {
+      el.classList.remove("page-full", "page-columns");
+      if (el.children) {
+        for (const child of el.children) {
+          stripColumnClz(child);
+        }
+      }
+    }
+    stripColumnClz(note)
+    if (id === null || id.startsWith('sec-')) {
+      // Special case sections, only their first couple elements
+      const container = document.createElement("div");
+      if (note.children && note.children.length > 2) {
+        container.appendChild(note.children[0].cloneNode(true));
+        for (let i = 1; i < note.children.length; i++) {
+          const child = note.children[i];
+          if (child.tagName === "P" && child.innerText === "") {
+            continue;
+          } else {
+            container.appendChild(child.cloneNode(true));
+            break;
+          }
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(container);
+        }
+        return container.innerHTML
+      } else {
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        return note.innerHTML;
+      }
+    } else {
+      // Remove any anchor links if they are present
+      const anchorLink = note.querySelector('a.anchorjs-link');
+      if (anchorLink) {
+        anchorLink.remove();
+      }
+      if (window.Quarto?.typesetMath) {
+        window.Quarto.typesetMath(note);
+      }
+      // TODO in 1.5, we should make sure this works without a callout special case
+      if (note.classList.contains("callout")) {
+        return note.outerHTML;
+      } else {
+        return note.innerHTML;
+      }
+    }
+  }
+  for (var i=0; i<xrefs.length; i++) {
+    const xref = xrefs[i];
+    tippyHover(xref, undefined, function(instance) {
+      instance.disable();
+      let url = xref.getAttribute('href');
+      let hash = undefined; 
+      if (url.startsWith('#')) {
+        hash = url;
+      } else {
+        try { hash = new URL(url).hash; } catch {}
+      }
+      if (hash) {
+        const id = hash.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note !== null) {
+          try {
+            const html = processXRef(id, note.cloneNode(true));
+            instance.setContent(html);
+          } finally {
+            instance.enable();
+            instance.show();
+          }
+        } else {
+          // See if we can fetch this
+          fetch(url.split('#')[0])
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.getElementById(id);
+            if (note !== null) {
+              const html = processXRef(id, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      } else {
+        // See if we can fetch a full url (with no hash to target)
+        // This is a special case and we should probably do some content thinning / targeting
+        fetch(url)
+        .then(res => res.text())
+        .then(html => {
+          const parser = new DOMParser();
+          const htmlDoc = parser.parseFromString(html, "text/html");
+          const note = htmlDoc.querySelector('main.content');
+          if (note !== null) {
+            // This should only happen for chapter cross references
+            // (since there is no id in the URL)
+            // remove the first header
+            if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+              note.children[0].remove();
+            }
+            const html = processXRef(null, note);
+            instance.setContent(html);
+          } 
+        }).finally(() => {
+          instance.enable();
+          instance.show();
+        });
+      }
+    }, function(instance) {
+    });
+  }
+      let selectedAnnoteEl;
+      const selectorForAnnotation = ( cell, annotation) => {
+        let cellAttr = 'data-code-cell="' + cell + '"';
+        let lineAttr = 'data-code-annotation="' +  annotation + '"';
+        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+        return selector;
+      }
+      const selectCodeLines = (annoteEl) => {
+        const doc = window.document;
+        const targetCell = annoteEl.getAttribute("data-target-cell");
+        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+        const lineIds = lines.map((line) => {
+          return targetCell + "-" + line;
+        })
+        let top = null;
+        let height = null;
+        let parent = null;
+        if (lineIds.length > 0) {
+            //compute the position of the single el (top and bottom and make a div)
+            const el = window.document.getElementById(lineIds[0]);
+            top = el.offsetTop;
+            height = el.offsetHeight;
+            parent = el.parentElement.parentElement;
+          if (lineIds.length > 1) {
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+            height = bottom - top;
+          }
+          if (top !== null && height !== null && parent !== null) {
+            // cook up a div (if necessary) and position it 
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            div.style.top = top - 2 + "px";
+            div.style.height = height + 4 + "px";
+            div.style.left = 0;
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            gutterDiv.style.top = top - 2 + "px";
+            gutterDiv.style.height = height + 4 + "px";
+          }
+          selectedAnnoteEl = annoteEl;
+        }
+      };
+      const unselectCodeLines = () => {
+        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+        elementsIds.forEach((elId) => {
+          const div = window.document.getElementById(elId);
+          if (div) {
+            div.remove();
+          }
+        });
+        selectedAnnoteEl = undefined;
+      };
+        // Handle positioning of the toggle
+    window.addEventListener(
+      "resize",
+      throttle(() => {
+        elRect = undefined;
+        if (selectedAnnoteEl) {
+          selectCodeLines(selectedAnnoteEl);
+        }
+      }, 10)
+    );
+    function throttle(fn, ms) {
+    let throttle = false;
+    let timer;
+      return (...args) => {
+        if(!throttle) { // first call gets through
+            fn.apply(this, args);
+            throttle = true;
+        } else { // all the others get throttled
+            if(timer) clearTimeout(timer); // cancel #2
+            timer = setTimeout(() => {
+              fn.apply(this, args);
+              timer = throttle = false;
+            }, ms);
+        }
+      };
+    }
+      // Attach click handler to the DT
+      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+      for (const annoteDlNode of annoteDls) {
+        annoteDlNode.addEventListener('click', (event) => {
+          const clickedEl = event.target;
+          if (clickedEl !== selectedAnnoteEl) {
+            unselectCodeLines();
+            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+            if (activeEl) {
+              activeEl.classList.remove('code-annotation-active');
+            }
+            selectCodeLines(clickedEl);
+            clickedEl.classList.add('code-annotation-active');
+          } else {
+            // Unselect the line
+            unselectCodeLines();
+            clickedEl.classList.remove('code-annotation-active');
+          }
+        });
+      }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script>
+</div> <!-- /content -->
+
+
+
+
+</body></html>
