@@ -13,6 +13,10 @@ body .main-container {
 }
 ```
 
+```{r}
+#This is a link to my [GitHub repository](https://github.com/ZigiButtercup/spatialdistributionassignment3), where you can find the project code and relevant data that needs to be downloaded.
+```
+
 ## The Great Re-range-ment: Changing Distributions of *Panthera leo* (Lion) and *Equus quagga* (Plains Zebra) Across Africa Under Present and Future Climate Conditions
 
 
