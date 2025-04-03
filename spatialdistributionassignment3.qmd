@@ -135,6 +135,7 @@ wrld_simpl <- getMap(resolution = "coarse")
 
 ```{r}
 #| results: hide
+#| warning: false
 
 dir.create(here("data", "raw", "present"), recursive = TRUE)
 
@@ -144,8 +145,10 @@ names(bio.data) <- paste0("bio", 1:19)
 ```
 
 ```{r}
+#| results: hide
+#| warning: false
 
-dir.create(here("data", "raw", "future"), recursive = TRUE)
+dir.create(here("data", "raw", "future"), recursive = TRUE) #create folder
 
 #Download future bio data
 future.bio.data <- cmip6_world(
