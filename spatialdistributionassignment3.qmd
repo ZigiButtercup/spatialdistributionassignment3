@@ -13,8 +13,11 @@ body .main-container {
 }
 ```
 
+
 ```{r}
-#This is a link to my [GitHub repository](https://github.com/ZigiButtercup/spatialdistributionassignment3), where you can find the project code and relevant data that needs to be downloaded.
+#This QMD file alone will not run the code because it has an image file in it that must be downloaded from my github repository. This is the link to my GitHub repository -  (https://github.com/ZigiButtercup/spatialdistributionassignment3), where you can find the project code and relevant data (and the image) that needs to be downloaded.
+
+#You need to download the entire repo and then in R studio select open project, select the downloaded repo and make sure all the files appear in the files tab to the right of the R studio interface. 
 ```
 
 ## The Great Re-range-ment: Changing Distributions of *Panthera leo* (Lion) and *Equus quagga* (Plains Zebra) Across Africa Under Present and Future Climate Conditions
