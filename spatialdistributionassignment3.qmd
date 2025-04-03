@@ -287,7 +287,7 @@ importance <- varImp(gm1, scale = FALSE)
 
 print(importance) 
 
-#bio15, variability in precipitation, has an importance that is nearly half of the importance (8.042061) of the other variables. Given this, and the fact that I am retaining variables bio12 and bio13, I am going to exclude bio15 to make the model simpler and prevent overfitting. Bio12 and bio13 provide information on annual precipitation and precipitation of the wettest month which I feel is sufficient.
+#bio15, variability in precipitation, has an importance that is nearly half of the importance of the other variables. Given this, and the fact that I am retaining variables bio12 and bio13, I am going to exclude bio15 to make the model simpler and prevent overfitting. Bio12 and bio13 provide information on annual precipitation and precipitation of the wettest month which I feel is sufficient.
 ```
 
 I will now assess the AIC of the model with 5 variables and the model with 6 variables to hopefully confirm that the 5 variable model is better.
@@ -375,7 +375,7 @@ Finally, to conclude the model has good performance I will evaluate it by assess
 gm1eval <- evaluate(testpres, testbackg, gm1)
 print(gm1eval)
 
-#AUC is 0.8213 indicating good discriminatory power of the model to predict lion presence and absence, and cor is 0.4 which further supports the model's predicative performance. As such, I am going to retain all six variables as the best balance between biological relevance and statistical performance.
+#AUC is 0.8 indicating good discriminatory power of the model to predict lion presence and absence, and cor is 0.4 which further supports the model's predicative performance. As such, I am going to retain all six variables as the best balance between biological relevance and statistical performance.
 ```
 
 [c) Fitting the 'gm1' model:]{.underline}
@@ -572,7 +572,7 @@ vif(gm2)
 ```
 
 ```{r}
-#I removed bio1 and created a model 'gm2_test1', and then tested the VIF. The VIF for bio6 dropped to 2.647243, suggesting that bio1 was driving multicollinearity. As such, I have decided to retain bio6 (which is important for capturing cold limits) and drop bio1. 
+#I removed bio1 and created a model 'gm2_test1', and then tested the VIF. The VIF for bio6 dropped to below 5, suggesting that bio1 was driving multicollinearity. As such, I have decided to retain bio6 (which is important for capturing cold limits) and drop bio1. 
 set.seed(0)
 gm2_test1 <- glm(pa ~ bio12+bio15+bio14+bio4+bio6, 
                   family = binomial(link = "logit"), #tells R to use logistic regression
@@ -589,7 +589,7 @@ AIC(gm2, gm2_test1)
 ```
 
 ```{r}
-#I then evaluated the gm2_test model predicative power with AUC. The AUC is 0.8575563 suggesting strong predicative power. The cor is 0.3, suggests a moderate alignment between the model's predictions and observed zebra presence. I am going to keep this model as this cor is consistent with ecological models where climate variables explain part of species distribution but not all of it. Also, combined with the high predicative power and my assessment of biological relevance of the variables, I feel the model remains appropriate. 
+#I then evaluated the gm2_test model predicative power with AUC. The AUC is 0.8 suggesting strong predicative power. The cor is 0.3, suggests a moderate alignment between the model's predictions and observed zebra presence. I am going to keep this model as this cor is consistent with ecological models where climate variables explain part of species distribution but not all of it. Also, combined with the high predicative power and my assessment of biological relevance of the variables, I feel the model remains appropriate. 
 
 set.seed(0)
 gm2_test1eval <- evaluate(testpres1, testbackg1, gm2_test1)
@@ -1141,7 +1141,7 @@ cat("Future Percent Overlap:", round(future_jaccard * 100, 1), "%\n")
 
 ```
 
-The code in Q5 predicts future distributions of *Panthera leo* and *Equus quagga* using CMIP6 climate data (2061–2080) under SSP245. The code first generates maps that indicate future habitat suitability, converts continuous probability ratser predictions to binary presence/absence rasters, and applies spatial buffers.The spatial buffers, as previously mentioned, are to account for the fact that lions and zebras move. This overlap analysis of the predicted future distributions indicates that both species' future ranges shrink due to reduced suitable habitat. Buffered rasters are aligned, combined, and overlap is visualised. The Jaccard Index then quantifies future co-occurrence, showing a decrease in overlap (from 50.1% to 24.5%). This suggests lions and zebras are predicted to co-occur less often under future climate conditions. This highlights that the range of lions and zebras is shifting due to climate change, the species are responding differently to these new environmental pressures, and we may even observe trophic decoupling in the future where predator-prey interactions decrease.
+The code in Q5 predicts future distributions of *Panthera leo* and *Equus quagga* using CMIP6 climate data (2061–2080) under SSP245. The code first generates maps that indicate future habitat suitability, converts continuous probability raster predictions to binary presence/absence rasters, and applies spatial buffers.The spatial buffers, as previously mentioned, are to account for the fact that lions and zebras move. This overlap analysis of the predicted future distributions indicates that both species' future ranges shrink due to reduced suitable habitat. Buffered rasters are aligned, combined, and overlap is visualised. The Jaccard Index then quantifies future co-occurrence, showing a decrease in overlap (from 50.1% to 24.5%). This suggests lions and zebras are predicted to co-occur less often under future climate conditions. This highlights that the range of lions and zebras is shifting due to climate change, the species are responding differently to these new environmental pressures, and we may even observe trophic decoupling in the future where predator-prey interactions decrease.
 
 ## Conclusion
 
